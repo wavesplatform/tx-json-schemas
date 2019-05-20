@@ -1,0 +1,32 @@
+{
+  "name": "@waves/tx-json-schemas",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./scripts/schemas.js && tsc && node ./scripts/copy-package.js",
+    "deploy": "npm run build && cd dist && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wavesplatform/tx-json-schemas.git"
+  },
+  "author": "siemarell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wavesplatform/tx-json-schemas/issues"
+  },
+  "homepage": "https://github.com/wavesplatform/tx-json-schemas#readme",
+  "dependencies": {
+    "@waves/waves-transactions": "^3.6.1",
+    "ajv": "^6.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.2",
+    "fs-extra": "^8.0.1",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5",
+    "typescript-json-schema": "^0.38.0"
+  }
+}
