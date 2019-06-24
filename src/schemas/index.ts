@@ -27,6 +27,10 @@ import ISetAssetScriptParams from './ISetAssetScriptParams.json'
 import IDataParams from './IDataParams.json'
 import ISponsorshipParams from './ISponsorshipParams.json'
 import IInvokeScriptParams from './IInvokeScriptParams.json'
+import INodeRequestOptions from './INodeRequestOptions.json'
+import TSeedTypes from './TSeedTypes.json'
+import WithId from './WithId.json'
+import WithTxType from './WithTxType.json'
 export default {
   TTx,
   IAliasTransaction,
@@ -56,5 +60,9 @@ export default {
   ISetAssetScriptParams,
   IDataParams,
   ISponsorshipParams,
-  IInvokeScriptParams
+  IInvokeScriptParams,
+  INodeRequestOptions,
+  TSeedTypes,
+  WithId,
+  WithTxType
 }

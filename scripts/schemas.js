@@ -31,7 +31,11 @@ const TYPES = [
     'ISetAssetScriptParams',
     'IDataParams',
     'ISponsorshipParams',
-    'IInvokeScriptParams'
+    'IInvokeScriptParams',
+    'INodeRequestOptions',
+    'TSeedTypes',
+    'WithId',
+    'WithTxType'
 ];
 
 function buildSchemas() {
@@ -54,7 +58,7 @@ function buildSchemas() {
         ]
     };
 
-    const program = TJS.getProgramFromFiles([resolve('./node_modules/@waves/waves-transactions/dist/transactions.d.ts')], compilerOptions);
+    const program = TJS.getProgramFromFiles([resolve('./node_modules/@waves/waves-transactions/dist/index.d.ts')], compilerOptions);
 
 
     TYPES.forEach(type => {
