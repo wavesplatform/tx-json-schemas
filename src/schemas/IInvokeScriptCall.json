@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "function": {
+      "description": "Function name",
+      "type": "string"
+    },
+    "args": {
+      "description": "Array of function arguments. E.g.:\n{type: 'integer', value: 200} or\n{ type: 'binary', value: 'base64:AQa3b8tH'}",
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "args",
+    "function"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptCall.json",
+  "definitions": {
+    "LONG": {
+      "type": [
+        "number"
+      ]
+    }
+  }
+}
