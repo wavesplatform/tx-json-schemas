@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Transaction ID. 32 bytes hash encoded as base58 string",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/WithId.json",
+  "definitions": {
+    "LONG": {
+      "type": [
+        "number"
+      ]
+    }
+  }
+}

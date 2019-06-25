@@ -1,0 +1,34 @@
+{
+  "anyOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "array",
+      "items": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    },
+    {
+      "type": "string"
+    }
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TSeedTypes.json",
+  "definitions": {
+    "LONG": {
+      "type": [
+        "number"
+      ]
+    }
+  }
+}

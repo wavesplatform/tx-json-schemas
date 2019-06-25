@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/WithTxType.json#/definitions/TRANSACTION_TYPE"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "definitions": {
+    "TRANSACTION_TYPE": {
+      "enum": [
+        1,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "type": "number"
+    },
+    "LONG": {
+      "type": [
+        "number"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/WithTxType.json"
+}
