@@ -833,7 +833,7 @@
         "data": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/DataEntry"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IDataEntry"
           }
         },
         "timestamp": {
@@ -875,7 +875,7 @@
         12
       ]
     },
-    "DataEntry": {
+    "IDataEntry": {
       "type": "object",
       "properties": {
         "key": {
@@ -1046,7 +1046,31 @@
         "args": {
           "description": "Array of function arguments. E.g.:\n{type: 'integer', value: 200} or\n{ type: 'binary', value: 'base64:AQa3b8tH'}",
           "type": "array",
-          "items": {}
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "binary",
+                  "boolean",
+                  "integer",
+                  "string"
+                ],
+                "type": "string"
+              },
+              "value": {
+                "type": [
+                  "string",
+                  "number",
+                  "boolean"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "value"
+            ]
+          }
         }
       },
       "required": [

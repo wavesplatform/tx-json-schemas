@@ -40,6 +40,12 @@
     },
     "expiration": {
       "type": "number"
+    },
+    "matcherFeeAssetId": {
+      "type": [
+        "null",
+        "string"
+      ]
     }
   },
   "required": [

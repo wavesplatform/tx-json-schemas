@@ -9,7 +9,7 @@
             "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/TypelessDataEntry"
           },
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/DataEntry"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/IDataEntry"
           }
         ]
       }
@@ -84,7 +84,7 @@
         "value"
       ]
     },
-    "DataEntry": {
+    "IDataEntry": {
       "type": "object",
       "properties": {
         "key": {
