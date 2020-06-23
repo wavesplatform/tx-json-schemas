@@ -10,15 +10,19 @@
     },
     "signature": {
       "type": "string"
+    },
+    "hash": {
+      "type": "string"
     }
   },
   "required": [
+    "hash",
     "orderId",
     "sender",
     "signature"
   ],
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/ICancelOrder.json",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ICancelOrder.json",
   "definitions": {
     "LONG": {
       "type": [

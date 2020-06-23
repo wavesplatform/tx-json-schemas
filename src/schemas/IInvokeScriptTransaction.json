@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptTransaction.json#/definitions/TRANSACTION_TYPE.INVOKE_SCRIPT"
+      "type": "number",
+      "enum": [
+        16
+      ]
     },
     "dApp": {
       "type": "string"
@@ -14,21 +17,24 @@
       ]
     },
     "call": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCall"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCall"
     },
     "payment": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptPayment<string|number>"
+        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptPayment<TChainId>"
       }
     },
     "timestamp": {
       "type": "number"
     },
     "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
     },
     "version": {
+      "type": "number"
+    },
+    "chainId": {
       "type": "number"
     },
     "proofs": {
@@ -43,10 +49,6 @@
     "senderPublicKey": {
       "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
       "type": "string"
-    },
-    "chainId": {
-      "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-      "type": "number"
     }
   },
   "required": [
@@ -60,12 +62,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.INVOKE_SCRIPT": {
-      "type": "number",
-      "enum": [
-        16
-      ]
-    },
     "IInvokeScriptCall": {
       "type": "object",
       "properties": {
@@ -108,7 +104,7 @@
         "function"
       ]
     },
-    "IInvokeScriptPayment<string|number>": {
+    "IInvokeScriptPayment<TChainId>": {
       "type": "object",
       "properties": {
         "assetId": {
@@ -136,5 +132,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json"
 }

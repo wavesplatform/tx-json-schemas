@@ -40,7 +40,7 @@
     "function"
   ],
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptCall.json",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json",
   "definitions": {
     "LONG": {
       "type": [

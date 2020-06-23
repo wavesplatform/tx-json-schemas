@@ -6,7 +6,7 @@
       "type": "string"
     },
     "amount": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/ITransferParams.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferParams.json#/definitions/LONG"
     },
     "assetId": {
       "type": [
@@ -23,11 +23,27 @@
     },
     "attachment": {
       "description": "Bytearray encoded as base58 string",
-      "type": "string"
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferParams.json#/definitions/IBooleanData"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferParams.json#/definitions/IIntegerData<TChainId>"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferParams.json#/definitions/IStringData"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferParams.json#/definitions/IBinaryData"
+        },
+        {
+          "type": "string"
+        }
+      ]
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/ITransferParams.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferParams.json#/definitions/LONG"
     },
     "additionalFee": {
       "description": "If fee is not set, this value will be added to automatically calculated fee. E.x.:\nAccount is scripted and 400000 fee more is required.",
@@ -40,6 +56,13 @@
     "timestamp": {
       "description": "Transaction timestamp. If not set current timestamp will be used. Date.now()",
       "type": "number"
+    },
+    "chainId": {
+      "description": "Network byte. Could be set as number or as char.\nIf set as char(string), charCodeAt(0) will be used. E.g.,\n'W' will be converted to '87'\nIf not set, 87 will be used as default",
+      "type": [
+        "string",
+        "number"
+      ]
     }
   },
   "required": [
@@ -51,8 +74,83 @@
       "type": [
         "number"
       ]
+    },
+    "IBooleanData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "boolean"
+          ]
+        },
+        "value": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IIntegerData<TChainId>": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "integer"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "number"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IStringData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "string"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IBinaryData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "binary"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/ITransferParams.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferParams.json"
 }
