@@ -31,10 +31,16 @@
                 "type": "string"
               },
               "value": {
-                "type": [
-                  "string",
-                  "number",
-                  "boolean"
+                "anyOf": [
+                  {
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptParams.json#/definitions/LONG"
+                  },
+                  {
+                    "type": [
+                      "string",
+                      "boolean"
+                    ]
+                  }
                 ]
               }
             },
@@ -52,8 +58,26 @@
     "payment": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptPayment<string|number>"
+        "type": "object",
+        "properties": {
+          "assetId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "amount": {
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptParams.json#/definitions/LONG"
+          }
+        },
+        "required": [
+          "amount"
+        ]
       }
+    },
+    "version": {
+      "description": "Transaction version. If not set, the latest available version will be used.",
+      "type": "number"
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
@@ -83,27 +107,6 @@
     "dApp"
   ],
   "definitions": {
-    "IInvokeScriptPayment<string|number>": {
-      "type": "object",
-      "properties": {
-        "assetId": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "amount": {
-          "type": [
-            "string",
-            "number"
-          ]
-        }
-      },
-      "required": [
-        "amount",
-        "assetId"
-      ]
-    },
     "LONG": {
       "type": [
         "number"

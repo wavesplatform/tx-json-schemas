@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IMassTransferTransaction.json#/definitions/TRANSACTION_TYPE.MASS_TRANSFER"
+      "type": "number",
+      "enum": [
+        11
+      ]
     },
     "transfers": {
       "type": "array",
@@ -53,12 +56,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.MASS_TRANSFER": {
-      "type": "number",
-      "enum": [
-        11
-      ]
-    },
     "IMassTransferItem<LONG>": {
       "type": "object",
       "properties": {

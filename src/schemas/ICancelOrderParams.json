@@ -3,6 +3,12 @@
   "properties": {
     "orderId": {
       "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "senderPublicKey": {
+      "type": "string"
     }
   },
   "required": [

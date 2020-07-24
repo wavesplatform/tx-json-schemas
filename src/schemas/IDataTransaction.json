@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataTransaction.json#/definitions/TRANSACTION_TYPE.DATA"
+      "type": "number",
+      "enum": [
+        12
+      ]
     },
     "data": {
       "type": "array",
@@ -43,12 +46,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.DATA": {
-      "type": "number",
-      "enum": [
-        12
-      ]
-    },
     "IDataEntry": {
       "type": "object",
       "properties": {
@@ -56,7 +53,7 @@
           "type": "string"
         },
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataTransaction.json#/definitions/DATA_FIELD_TYPE"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataTransaction.json#/definitions/TDataFiledType"
         },
         "value": {
           "type": [
@@ -72,7 +69,7 @@
         "value"
       ]
     },
-    "DATA_FIELD_TYPE": {
+    "TDataFiledType": {
       "enum": [
         "binary",
         "boolean",

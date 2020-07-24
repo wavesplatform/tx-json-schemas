@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IReissueTransaction.json#/definitions/TRANSACTION_TYPE.REISSUE"
+      "type": "number",
+      "enum": [
+        5
+      ]
     },
     "assetId": {
       "type": "string"
@@ -53,12 +56,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.REISSUE": {
-      "type": "number",
-      "enum": [
-        5
-      ]
-    },
     "LONG": {
       "type": [
         "number"

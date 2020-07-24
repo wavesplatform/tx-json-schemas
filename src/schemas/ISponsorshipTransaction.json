@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/ISponsorshipTransaction.json#/definitions/TRANSACTION_TYPE.SPONSORSHIP"
+      "type": "number",
+      "enum": [
+        14
+      ]
     },
     "minSponsoredAssetFee": {
       "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/ISponsorshipTransaction.json#/definitions/LONG",
@@ -46,12 +49,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.SPONSORSHIP": {
-      "type": "number",
-      "enum": [
-        14
-      ]
-    },
     "LONG": {
       "type": [
         "number"

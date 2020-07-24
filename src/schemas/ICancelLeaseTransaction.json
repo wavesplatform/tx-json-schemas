@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/ICancelLeaseTransaction.json#/definitions/TRANSACTION_TYPE.CANCEL_LEASE"
+      "type": "number",
+      "enum": [
+        9
+      ]
     },
     "leaseId": {
       "type": "string"
@@ -45,12 +48,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.CANCEL_LEASE": {
-      "type": "number",
-      "enum": [
-        9
-      ]
-    },
     "LONG": {
       "type": [
         "number"

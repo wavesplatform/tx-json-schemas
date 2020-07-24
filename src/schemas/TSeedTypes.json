@@ -10,11 +10,37 @@
       }
     },
     {
+      "type": "object",
+      "properties": {
+        "privateKey": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "privateKey"
+      ]
+    },
+    {
       "type": "array",
       "items": {
-        "type": [
-          "null",
-          "string"
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "privateKey": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "privateKey"
+            ]
+          },
+          {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
         ]
       }
     },

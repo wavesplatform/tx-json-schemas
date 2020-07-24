@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IInvokeScriptTransaction.json#/definitions/TRANSACTION_TYPE.INVOKE_SCRIPT"
+      "type": "number",
+      "enum": [
+        16
+      ]
     },
     "dApp": {
       "type": "string"
@@ -60,12 +63,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.INVOKE_SCRIPT": {
-      "type": "number",
-      "enum": [
-        16
-      ]
-    },
     "IInvokeScriptCall": {
       "type": "object",
       "properties": {

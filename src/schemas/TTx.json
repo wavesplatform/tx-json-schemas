@@ -48,7 +48,10 @@
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.ALIAS"
+          "type": "number",
+          "enum": [
+            10
+          ]
         },
         "alias": {
           "type": "string"
@@ -91,12 +94,6 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.ALIAS": {
-      "type": "number",
-      "enum": [
-        10
-      ]
-    },
     "LONG": {
       "type": [
         "number"
@@ -106,7 +103,10 @@
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.ISSUE"
+          "type": "number",
+          "enum": [
+            3
+          ]
         },
         "name": {
           "minLength": 4,
@@ -171,18 +171,15 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.ISSUE": {
-      "type": "number",
-      "enum": [
-        3
-      ]
-    },
     "ITransferTransaction<LONG>": {
       "description": "Used to transfer assets from one account to another.",
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.TRANSFER"
+          "type": "number",
+          "enum": [
+            4
+          ]
         },
         "recipient": {
           "type": "string"
@@ -240,17 +237,14 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.TRANSFER": {
-      "type": "number",
-      "enum": [
-        4
-      ]
-    },
     "IReissueTransaction<LONG>": {
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.REISSUE"
+          "type": "number",
+          "enum": [
+            5
+          ]
         },
         "assetId": {
           "type": "string"
@@ -301,17 +295,14 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.REISSUE": {
-      "type": "number",
-      "enum": [
-        5
-      ]
-    },
     "IBurnTransaction<LONG>": {
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.BURN"
+          "type": "number",
+          "enum": [
+            6
+          ]
         },
         "assetId": {
           "type": "string"
@@ -358,17 +349,14 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.BURN": {
-      "type": "number",
-      "enum": [
-        6
-      ]
-    },
     "ILeaseTransaction<LONG>": {
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.LEASE"
+          "type": "number",
+          "enum": [
+            8
+          ]
         },
         "amount": {
           "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
@@ -410,17 +398,14 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.LEASE": {
-      "type": "number",
-      "enum": [
-        8
-      ]
-    },
     "IExchangeTransaction<string|number>": {
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.EXCHANGE"
+          "type": "number",
+          "enum": [
+            7
+          ]
         },
         "order1": {
           "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IOrder<string|number>"
@@ -491,12 +476,6 @@
         "timestamp",
         "type",
         "version"
-      ]
-    },
-    "TRANSACTION_TYPE.EXCHANGE": {
-      "type": "number",
-      "enum": [
-        7
       ]
     },
     "IOrder<string|number>": {
@@ -588,7 +567,10 @@
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.CANCEL_LEASE"
+          "type": "number",
+          "enum": [
+            9
+          ]
         },
         "leaseId": {
           "type": "string"
@@ -631,17 +613,14 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.CANCEL_LEASE": {
-      "type": "number",
-      "enum": [
-        9
-      ]
-    },
     "IMassTransferTransaction<LONG>": {
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.MASS_TRANSFER"
+          "type": "number",
+          "enum": [
+            11
+          ]
         },
         "transfers": {
           "type": "array",
@@ -692,12 +671,6 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.MASS_TRANSFER": {
-      "type": "number",
-      "enum": [
-        11
-      ]
-    },
     "IMassTransferItem<LONG>": {
       "type": "object",
       "properties": {
@@ -717,7 +690,10 @@
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.SET_SCRIPT"
+          "type": "number",
+          "enum": [
+            13
+          ]
         },
         "script": {
           "description": "Compiled script encoded as base64 string",
@@ -764,17 +740,14 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.SET_SCRIPT": {
-      "type": "number",
-      "enum": [
-        13
-      ]
-    },
     "ISponsorshipTransaction<LONG>": {
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.SPONSORSHIP"
+          "type": "number",
+          "enum": [
+            14
+          ]
         },
         "minSponsoredAssetFee": {
           "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG",
@@ -818,17 +791,14 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.SPONSORSHIP": {
-      "type": "number",
-      "enum": [
-        14
-      ]
-    },
     "IDataTransaction<LONG>": {
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.DATA"
+          "type": "number",
+          "enum": [
+            12
+          ]
         },
         "data": {
           "type": "array",
@@ -869,12 +839,6 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.DATA": {
-      "type": "number",
-      "enum": [
-        12
-      ]
-    },
     "IDataEntry": {
       "type": "object",
       "properties": {
@@ -882,7 +846,7 @@
           "type": "string"
         },
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/DATA_FIELD_TYPE"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TDataFiledType"
         },
         "value": {
           "type": [
@@ -898,7 +862,7 @@
         "value"
       ]
     },
-    "DATA_FIELD_TYPE": {
+    "TDataFiledType": {
       "enum": [
         "binary",
         "boolean",
@@ -911,7 +875,10 @@
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.SET_ASSET_SCRIPT"
+          "type": "number",
+          "enum": [
+            15
+          ]
         },
         "assetId": {
           "type": "string"
@@ -962,17 +929,14 @@
         "version"
       ]
     },
-    "TRANSACTION_TYPE.SET_ASSET_SCRIPT": {
-      "type": "number",
-      "enum": [
-        15
-      ]
-    },
     "IInvokeScriptTransaction<LONG>": {
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TRANSACTION_TYPE.INVOKE_SCRIPT"
+          "type": "number",
+          "enum": [
+            16
+          ]
         },
         "dApp": {
           "type": "string"
@@ -1028,12 +992,6 @@
         "timestamp",
         "type",
         "version"
-      ]
-    },
-    "TRANSACTION_TYPE.INVOKE_SCRIPT": {
-      "type": "number",
-      "enum": [
-        16
       ]
     },
     "IInvokeScriptCall": {

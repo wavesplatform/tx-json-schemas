@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/ISetAssetScriptTransaction.json#/definitions/TRANSACTION_TYPE.SET_ASSET_SCRIPT"
+      "type": "number",
+      "enum": [
+        15
+      ]
     },
     "assetId": {
       "type": "string"
@@ -53,12 +56,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.SET_ASSET_SCRIPT": {
-      "type": "number",
-      "enum": [
-        15
-      ]
-    },
     "LONG": {
       "type": [
         "number"

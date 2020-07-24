@@ -6,13 +6,17 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/TypelessDataEntry"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/IDataEntry"
           },
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/IDataEntry"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/ITypelessDataEntry"
           }
         ]
       }
+    },
+    "version": {
+      "description": "Transaction version. If not set, the latest available version will be used.",
+      "type": "number"
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
@@ -35,7 +39,39 @@
     "data"
   ],
   "definitions": {
-    "TypelessDataEntry": {
+    "IDataEntry": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/TDataFiledType"
+        },
+        "value": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ]
+        }
+      },
+      "required": [
+        "key",
+        "type",
+        "value"
+      ]
+    },
+    "TDataFiledType": {
+      "enum": [
+        "binary",
+        "boolean",
+        "integer",
+        "string"
+      ],
+      "type": "string"
+    },
+    "ITypelessDataEntry": {
       "type": "object",
       "properties": {
         "key": {
@@ -45,16 +81,6 @@
           "anyOf": [
             {
               "description": "A typed array of 8-bit unsigned integer values. The contents are initialized to 0. If the\nrequested number of bytes could not be allocated an exception is raised.",
-              "type": "object",
-              "additionalProperties": false,
-              "patternProperties": {
-                "^[0-9]+$": {
-                  "type": "number"
-                }
-              }
-            },
-            {
-              "description": "Raw data is stored in instances of the Buffer class.\nA Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap.  A Buffer cannot be resized.\nValid string encodings: 'ascii'|'utf8'|'utf16le'|'ucs2'(alias of 'utf16le')|'base64'|'binary'(deprecated)|'hex'",
               "type": "object",
               "additionalProperties": false,
               "patternProperties": {
@@ -83,38 +109,6 @@
         "key",
         "value"
       ]
-    },
-    "IDataEntry": {
-      "type": "object",
-      "properties": {
-        "key": {
-          "type": "string"
-        },
-        "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/DATA_FIELD_TYPE"
-        },
-        "value": {
-          "type": [
-            "string",
-            "number",
-            "boolean"
-          ]
-        }
-      },
-      "required": [
-        "key",
-        "type",
-        "value"
-      ]
-    },
-    "DATA_FIELD_TYPE": {
-      "enum": [
-        "binary",
-        "boolean",
-        "integer",
-        "string"
-      ],
-      "type": "string"
     },
     "LONG": {
       "type": [

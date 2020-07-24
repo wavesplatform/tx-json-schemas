@@ -2,7 +2,10 @@
   "type": "object",
   "properties": {
     "type": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IIssueTransaction.json#/definitions/TRANSACTION_TYPE.ISSUE"
+      "type": "number",
+      "enum": [
+        3
+      ]
     },
     "name": {
       "minLength": 4,
@@ -67,12 +70,6 @@
     "version"
   ],
   "definitions": {
-    "TRANSACTION_TYPE.ISSUE": {
-      "type": "number",
-      "enum": [
-        3
-      ]
-    },
     "LONG": {
       "type": [
         "number"

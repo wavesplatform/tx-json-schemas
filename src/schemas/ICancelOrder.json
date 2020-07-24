@@ -10,9 +10,13 @@
     },
     "signature": {
       "type": "string"
+    },
+    "hash": {
+      "type": "string"
     }
   },
   "required": [
+    "hash",
     "orderId",
     "sender",
     "signature"
