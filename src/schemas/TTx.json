@@ -417,7 +417,7 @@
         "assetId": {
           "type": "string"
         },
-        "quantity": {
+        "amount": {
           "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "timestamp": {
@@ -453,11 +453,11 @@
         }
       },
       "required": [
+        "amount",
         "assetId",
         "chainId",
         "fee",
         "proofs",
-        "quantity",
         "senderPublicKey",
         "timestamp",
         "type",
