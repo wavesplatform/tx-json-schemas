@@ -10,7 +10,7 @@
     "assetId": {
       "type": "string"
     },
-    "quantity": {
+    "amount": {
       "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IBurnTransaction.json#/definitions/LONG"
     },
     "timestamp": {
@@ -41,11 +41,11 @@
     }
   },
   "required": [
+    "amount",
     "assetId",
     "chainId",
     "fee",
     "proofs",
-    "quantity",
     "senderPublicKey",
     "timestamp",
     "type",

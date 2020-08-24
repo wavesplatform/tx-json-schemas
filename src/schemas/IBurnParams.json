@@ -4,7 +4,7 @@
     "assetId": {
       "type": "string"
     },
-    "quantity": {
+    "amount": {
       "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IBurnParams.json#/definitions/LONG"
     },
     "version": {
@@ -36,8 +36,8 @@
     }
   },
   "required": [
-    "assetId",
-    "quantity"
+    "amount",
+    "assetId"
   ],
   "definitions": {
     "LONG": {
