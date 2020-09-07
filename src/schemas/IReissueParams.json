@@ -5,7 +5,7 @@
       "type": "string"
     },
     "quantity": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IReissueParams.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IReissueParams.json#/definitions/LONG"
     },
     "reissuable": {
       "type": "boolean"
@@ -16,7 +16,7 @@
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IReissueParams.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IReissueParams.json#/definitions/LONG"
     },
     "additionalFee": {
       "description": "If fee is not set, this value will be added to automatically calculated fee. E.x.:\nAccount is scripted and 400000 fee more is required.",
@@ -51,5 +51,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IReissueParams.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IReissueParams.json"
 }

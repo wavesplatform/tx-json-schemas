@@ -8,7 +8,7 @@
           {
             "allOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/IBooleanData"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/IBooleanData"
               },
               {
                 "type": "object",
@@ -26,7 +26,7 @@
           {
             "allOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/IIntegerData<TChainId>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/IIntegerData<TChainId>"
               },
               {
                 "type": "object",
@@ -44,7 +44,7 @@
           {
             "allOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/IStringData"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/IStringData"
               },
               {
                 "type": "object",
@@ -62,7 +62,7 @@
           {
             "allOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/IBinaryData"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/IBinaryData"
               },
               {
                 "type": "object",
@@ -95,7 +95,7 @@
             ]
           },
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/ITypelessDataEntry"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/ITypelessDataEntry"
           }
         ]
       }
@@ -106,7 +106,7 @@
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/LONG"
     },
     "additionalFee": {
       "description": "If fee is not set, this value will be added to automatically calculated fee. E.x.:\nAccount is scripted and 400000 fee more is required.",
@@ -253,5 +253,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json"
 }

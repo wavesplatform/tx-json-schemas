@@ -8,7 +8,7 @@
       ]
     },
     "minSponsoredAssetFee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ISponsorshipTransaction.json#/definitions/LONG",
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ISponsorshipTransaction.json#/definitions/LONG",
       "description": "Minimal fee amount in sponsored asset. To disable sponsorship set it to 0"
     },
     "assetId": {
@@ -19,7 +19,7 @@
       "type": "number"
     },
     "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ISponsorshipTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ISponsorshipTransaction.json#/definitions/LONG"
     },
     "version": {
       "type": "number"
@@ -66,5 +66,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ISponsorshipTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ISponsorshipTransaction.json"
 }

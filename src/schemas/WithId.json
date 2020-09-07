@@ -10,7 +10,7 @@
     "id"
   ],
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/WithId.json",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/WithId.json",
   "definitions": {
     "LONG": {
       "type": [

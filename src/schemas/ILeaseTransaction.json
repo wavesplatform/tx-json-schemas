@@ -8,7 +8,7 @@
       ]
     },
     "amount": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ILeaseTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ILeaseTransaction.json#/definitions/LONG"
     },
     "recipient": {
       "type": "string"
@@ -17,7 +17,7 @@
       "type": "number"
     },
     "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ILeaseTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ILeaseTransaction.json#/definitions/LONG"
     },
     "version": {
       "type": "number"
@@ -64,5 +64,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ILeaseTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ILeaseTransaction.json"
 }

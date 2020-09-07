@@ -1,49 +1,49 @@
 {
   "anyOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IAliasTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IAliasTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IIssueTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IIssueTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ITransferTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/ITransferTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IReissueTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IReissueTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBurnTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IBurnTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ILeaseTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/ILeaseTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IExchangeTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IExchangeTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ICancelLeaseTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/ICancelLeaseTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IMassTransferTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IMassTransferTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ISetScriptTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/ISetScriptTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ISponsorshipTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/ISponsorshipTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IDataTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IDataTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ISetAssetScriptTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/ISetAssetScriptTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IUpdateAssetInfoTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IUpdateAssetInfoTransaction<LONG>"
     }
   ],
   "definitions": {
@@ -63,7 +63,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -129,7 +129,7 @@
           "type": "number"
         },
         "quantity": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "reissuable": {
           "type": "boolean"
@@ -141,7 +141,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -198,21 +198,21 @@
           "type": "string"
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "attachment": {
           "anyOf": [
             {
-              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBooleanData"
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IBooleanData"
             },
             {
-              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
             },
             {
-              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IStringData"
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IStringData"
             },
             {
-              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBinaryData"
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IBinaryData"
             }
           ]
         },
@@ -232,7 +232,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -355,7 +355,7 @@
           "type": "string"
         },
         "quantity": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "reissuable": {
           "type": "boolean"
@@ -364,7 +364,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -418,13 +418,13 @@
           "type": "string"
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "timestamp": {
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -474,7 +474,7 @@
           ]
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "recipient": {
           "type": "string"
@@ -483,7 +483,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -533,28 +533,28 @@
           ]
         },
         "order1": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IOrder<TChainId>"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IOrder<TChainId>"
         },
         "order2": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IOrder<TChainId>"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IOrder<TChainId>"
         },
         "price": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "buyMatcherFee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "sellMatcherFee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "timestamp": {
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -699,7 +699,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -750,22 +750,22 @@
         "transfers": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IMassTransferItem<LONG>"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IMassTransferItem<LONG>"
           }
         },
         "attachment": {
           "anyOf": [
             {
-              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBooleanData"
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IBooleanData"
             },
             {
-              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
             },
             {
-              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IStringData"
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IStringData"
             },
             {
-              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBinaryData"
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IBinaryData"
             }
           ]
         },
@@ -779,7 +779,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -826,7 +826,7 @@
           "type": "string"
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         }
       },
       "required": [
@@ -854,7 +854,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -903,7 +903,7 @@
           ]
         },
         "minSponsoredAssetFee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG",
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG",
           "description": "Minimal fee amount in sponsored asset. To disable sponsorship set it to 0"
         },
         "assetId": {
@@ -914,7 +914,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -970,7 +970,7 @@
               {
                 "allOf": [
                   {
-                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBooleanData"
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IBooleanData"
                   },
                   {
                     "type": "object",
@@ -988,7 +988,7 @@
               {
                 "allOf": [
                   {
-                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
                   },
                   {
                     "type": "object",
@@ -1006,7 +1006,7 @@
               {
                 "allOf": [
                   {
-                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IStringData"
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IStringData"
                   },
                   {
                     "type": "object",
@@ -1024,7 +1024,7 @@
               {
                 "allOf": [
                   {
-                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBinaryData"
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IBinaryData"
                   },
                   {
                     "type": "object",
@@ -1063,7 +1063,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -1125,7 +1125,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -1184,19 +1184,19 @@
           ]
         },
         "call": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCall<LONG>"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCall<LONG>"
         },
         "payment": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptPayment<TChainId>"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptPayment<TChainId>"
           }
         },
         "timestamp": {
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -1242,19 +1242,19 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallStringArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallStringArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallBinaryArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallBinaryArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallBoolArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallBoolArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallListArgument<LONG>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallListArgument<LONG>"
               }
             ]
           }
@@ -1329,7 +1329,7 @@
           ]
         },
         "value": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         }
       },
       "required": [
@@ -1351,16 +1351,16 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallStringArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallStringArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallBinaryArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallBinaryArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallBoolArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallBoolArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
               }
             ]
           }
@@ -1414,7 +1414,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
@@ -1457,5 +1457,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TTx.json"
 }

@@ -8,28 +8,28 @@
       ]
     },
     "order1": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IExchangeTransaction.json#/definitions/IOrder<TChainId>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/IOrder<TChainId>"
     },
     "order2": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IExchangeTransaction.json#/definitions/IOrder<TChainId>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/IOrder<TChainId>"
     },
     "price": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
     },
     "amount": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
     },
     "buyMatcherFee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
     },
     "sellMatcherFee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
     },
     "timestamp": {
       "type": "number"
     },
     "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
     },
     "version": {
       "type": "number"
@@ -165,5 +165,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IExchangeTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json"
 }

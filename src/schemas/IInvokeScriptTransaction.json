@@ -17,19 +17,19 @@
       ]
     },
     "call": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCall<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCall<LONG>"
     },
     "payment": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptPayment<TChainId>"
+        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptPayment<TChainId>"
       }
     },
     "timestamp": {
       "type": "number"
     },
     "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
     },
     "version": {
       "type": "number"
@@ -75,19 +75,19 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallStringArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallStringArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBinaryArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBinaryArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBoolArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBoolArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallListArgument<LONG>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallListArgument<LONG>"
               }
             ]
           }
@@ -162,7 +162,7 @@
           ]
         },
         "value": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
         }
       },
       "required": [
@@ -189,16 +189,16 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallStringArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallStringArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBinaryArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBinaryArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBoolArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBoolArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
               }
             ]
           }
@@ -232,5 +232,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json"
 }

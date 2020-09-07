@@ -68,7 +68,7 @@ function buildSchemas() {
     const program = TJS.getProgramFromFiles([resolve('./node_modules/@waves/waves-transactions/dist/index.d.ts')], compilerOptions);
 
     TYPES.forEach(type => {
-        const id = `https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/${type}.json`;
+        const id = `https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/${type}.json`;
         let schema = TJS.generateSchema(program, type, {...settings, id});
         // Define generic LONG as number in JSON schema.
         // Otherwise ot would be object. Should probably pass param that defines LONG schema;

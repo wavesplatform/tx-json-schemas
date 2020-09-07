@@ -12,21 +12,21 @@
       "type": "string"
     },
     "amount": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
     },
     "attachment": {
       "anyOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferTransaction.json#/definitions/IBooleanData"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/IBooleanData"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferTransaction.json#/definitions/IIntegerData<TChainId>"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/IIntegerData<TChainId>"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferTransaction.json#/definitions/IStringData"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/IStringData"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferTransaction.json#/definitions/IBinaryData"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/IBinaryData"
         }
       ]
     },
@@ -46,7 +46,7 @@
       "type": "number"
     },
     "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
     },
     "version": {
       "type": "number"
@@ -163,5 +163,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ITransferTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json"
 }

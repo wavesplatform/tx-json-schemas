@@ -11,19 +11,19 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallStringArgument"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallStringArgument"
           },
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBinaryArgument"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBinaryArgument"
           },
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBoolArgument"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBoolArgument"
           },
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
           },
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallListArgument<LONG>"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallListArgument<LONG>"
           }
         ]
       }
@@ -98,7 +98,7 @@
           ]
         },
         "value": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/LONG"
         }
       },
       "required": [
@@ -125,16 +125,16 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallStringArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallStringArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBinaryArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBinaryArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBoolArgument"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBoolArgument"
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
               }
             ]
           }
@@ -147,5 +147,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IInvokeScriptCall.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json"
 }
