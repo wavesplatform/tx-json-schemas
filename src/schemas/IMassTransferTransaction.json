@@ -10,11 +10,24 @@
     "transfers": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IMassTransferTransaction.json#/definitions/IMassTransferItem<LONG>"
+        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IMassTransferTransaction.json#/definitions/IMassTransferItem<LONG>"
       }
     },
     "attachment": {
-      "type": "string"
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IMassTransferTransaction.json#/definitions/IBooleanData"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IMassTransferTransaction.json#/definitions/IIntegerData<TChainId>"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IMassTransferTransaction.json#/definitions/IStringData"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IMassTransferTransaction.json#/definitions/IBinaryData"
+        }
+      ]
     },
     "assetId": {
       "type": [
@@ -26,10 +39,19 @@
       "type": "number"
     },
     "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IMassTransferTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IMassTransferTransaction.json#/definitions/LONG"
     },
     "version": {
       "type": "number"
+    },
+    "chainId": {
+      "type": "number"
+    },
+    "feeAssetId": {
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "proofs": {
       "description": "ITransaction signatures",
@@ -47,6 +69,7 @@
   },
   "required": [
     "attachment",
+    "chainId",
     "fee",
     "proofs",
     "senderPublicKey",
@@ -63,7 +86,7 @@
           "type": "string"
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IMassTransferTransaction.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IMassTransferTransaction.json#/definitions/LONG"
         }
       },
       "required": [
@@ -75,8 +98,83 @@
       "type": [
         "number"
       ]
+    },
+    "IBooleanData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "boolean"
+          ]
+        },
+        "value": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IIntegerData<TChainId>": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "integer"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "number"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IStringData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "string"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IBinaryData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "binary"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IMassTransferTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IMassTransferTransaction.json"
 }

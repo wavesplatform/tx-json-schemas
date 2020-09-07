@@ -1,46 +1,49 @@
 {
   "anyOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IAliasTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IAliasTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IIssueTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IIssueTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/ITransferTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ITransferTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IReissueTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IReissueTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IBurnTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBurnTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/ILeaseTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ILeaseTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IExchangeTransaction<string|number>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IExchangeTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/ICancelLeaseTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ICancelLeaseTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IMassTransferTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IMassTransferTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/ISetScriptTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ISetScriptTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/ISponsorshipTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ISponsorshipTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IDataTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IDataTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/ISetAssetScriptTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/ISetAssetScriptTransaction<LONG>"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IInvokeScriptTransaction<LONG>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptTransaction<LONG>"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IUpdateAssetInfoTransaction<LONG>"
     }
   ],
   "definitions": {
@@ -60,10 +63,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -77,10 +89,6 @@
         "senderPublicKey": {
           "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
           "type": "string"
-        },
-        "chainId": {
-          "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-          "type": "number"
         }
       },
       "required": [
@@ -121,7 +129,7 @@
           "type": "number"
         },
         "quantity": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "reissuable": {
           "type": "boolean"
@@ -133,10 +141,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -150,10 +167,6 @@
         "senderPublicKey": {
           "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
           "type": "string"
-        },
-        "chainId": {
-          "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-          "type": "number"
         }
       },
       "required": [
@@ -185,10 +198,23 @@
           "type": "string"
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "attachment": {
-          "type": "string"
+          "anyOf": [
+            {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBooleanData"
+            },
+            {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
+            },
+            {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IStringData"
+            },
+            {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBinaryData"
+            }
+          ]
         },
         "feeAssetId": {
           "type": [
@@ -206,9 +232,12 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
+          "type": "number"
+        },
+        "chainId": {
           "type": "number"
         },
         "proofs": {
@@ -228,6 +257,7 @@
       "required": [
         "amount",
         "attachment",
+        "chainId",
         "fee",
         "proofs",
         "recipient",
@@ -235,6 +265,81 @@
         "timestamp",
         "type",
         "version"
+      ]
+    },
+    "IBooleanData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "boolean"
+          ]
+        },
+        "value": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IIntegerData<TChainId>": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "integer"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "number"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IStringData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "string"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IBinaryData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "binary"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
       ]
     },
     "IReissueTransaction<LONG>": {
@@ -250,7 +355,7 @@
           "type": "string"
         },
         "quantity": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "reissuable": {
           "type": "boolean"
@@ -259,10 +364,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -276,10 +390,6 @@
         "senderPublicKey": {
           "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
           "type": "string"
-        },
-        "chainId": {
-          "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-          "type": "number"
         }
       },
       "required": [
@@ -308,16 +418,25 @@
           "type": "string"
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "timestamp": {
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -331,10 +450,6 @@
         "senderPublicKey": {
           "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
           "type": "string"
-        },
-        "chainId": {
-          "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-          "type": "number"
         }
       },
       "required": [
@@ -359,7 +474,7 @@
           ]
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "recipient": {
           "type": "string"
@@ -368,10 +483,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -389,6 +513,7 @@
       },
       "required": [
         "amount",
+        "chainId",
         "fee",
         "proofs",
         "recipient",
@@ -398,7 +523,7 @@
         "version"
       ]
     },
-    "IExchangeTransaction<string|number>": {
+    "IExchangeTransaction<LONG>": {
       "type": "object",
       "properties": {
         "type": {
@@ -408,46 +533,40 @@
           ]
         },
         "order1": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IOrder<string|number>"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IOrder<TChainId>"
         },
         "order2": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IOrder<string|number>"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IOrder<TChainId>"
         },
         "price": {
-          "type": [
-            "string",
-            "number"
-          ]
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "amount": {
-          "type": [
-            "string",
-            "number"
-          ]
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "buyMatcherFee": {
-          "type": [
-            "string",
-            "number"
-          ]
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "sellMatcherFee": {
-          "type": [
-            "string",
-            "number"
-          ]
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "timestamp": {
           "type": "number"
         },
         "fee": {
-          "type": [
-            "string",
-            "number"
-          ]
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -466,6 +585,7 @@
       "required": [
         "amount",
         "buyMatcherFee",
+        "chainId",
         "fee",
         "order1",
         "order2",
@@ -478,7 +598,7 @@
         "version"
       ]
     },
-    "IOrder<string|number>": {
+    "IOrder<TChainId>": {
       "type": "object",
       "properties": {
         "version": {
@@ -579,10 +699,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -596,10 +725,6 @@
         "senderPublicKey": {
           "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
           "type": "string"
-        },
-        "chainId": {
-          "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-          "type": "number"
         }
       },
       "required": [
@@ -625,11 +750,24 @@
         "transfers": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IMassTransferItem<LONG>"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IMassTransferItem<LONG>"
           }
         },
         "attachment": {
-          "type": "string"
+          "anyOf": [
+            {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBooleanData"
+            },
+            {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
+            },
+            {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IStringData"
+            },
+            {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBinaryData"
+            }
+          ]
         },
         "assetId": {
           "type": [
@@ -641,10 +779,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -662,6 +809,7 @@
       },
       "required": [
         "attachment",
+        "chainId",
         "fee",
         "proofs",
         "senderPublicKey",
@@ -678,7 +826,7 @@
           "type": "string"
         },
         "amount": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         }
       },
       "required": [
@@ -706,10 +854,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -723,10 +880,6 @@
         "senderPublicKey": {
           "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
           "type": "string"
-        },
-        "chainId": {
-          "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-          "type": "number"
         }
       },
       "required": [
@@ -750,7 +903,7 @@
           ]
         },
         "minSponsoredAssetFee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG",
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG",
           "description": "Minimal fee amount in sponsored asset. To disable sponsorship set it to 0"
         },
         "assetId": {
@@ -761,10 +914,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -782,6 +944,7 @@
       },
       "required": [
         "assetId",
+        "chainId",
         "fee",
         "minSponsoredAssetFee",
         "proofs",
@@ -803,17 +966,116 @@
         "data": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IDataEntry"
+            "anyOf": [
+              {
+                "allOf": [
+                  {
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBooleanData"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "key"
+                    ]
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IIntegerData<TChainId>"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "key"
+                    ]
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IStringData"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "key"
+                    ]
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IBinaryData"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "key"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "null"
+                  },
+                  "value": {
+                    "type": "null"
+                  },
+                  "key": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "key"
+                ]
+              }
+            ]
           }
         },
         "timestamp": {
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -830,6 +1092,7 @@
         }
       },
       "required": [
+        "chainId",
         "data",
         "fee",
         "proofs",
@@ -838,38 +1101,6 @@
         "type",
         "version"
       ]
-    },
-    "IDataEntry": {
-      "type": "object",
-      "properties": {
-        "key": {
-          "type": "string"
-        },
-        "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/TDataFiledType"
-        },
-        "value": {
-          "type": [
-            "string",
-            "number",
-            "boolean"
-          ]
-        }
-      },
-      "required": [
-        "key",
-        "type",
-        "value"
-      ]
-    },
-    "TDataFiledType": {
-      "enum": [
-        "binary",
-        "boolean",
-        "integer",
-        "string"
-      ],
-      "type": "string"
     },
     "ISetAssetScriptTransaction<LONG>": {
       "type": "object",
@@ -894,10 +1125,19 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
           "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "proofs": {
           "description": "ITransaction signatures",
@@ -911,10 +1151,6 @@
         "senderPublicKey": {
           "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
           "type": "string"
-        },
-        "chainId": {
-          "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-          "type": "number"
         }
       },
       "required": [
@@ -948,21 +1184,24 @@
           ]
         },
         "call": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IInvokeScriptCall"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCall<LONG>"
         },
         "payment": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/IInvokeScriptPayment<string|number>"
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptPayment<TChainId>"
           }
         },
         "timestamp": {
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
         },
         "version": {
+          "type": "number"
+        },
+        "chainId": {
           "type": "number"
         },
         "proofs": {
@@ -977,10 +1216,6 @@
         "senderPublicKey": {
           "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
           "type": "string"
-        },
-        "chainId": {
-          "description": "Network byte.\nE.g.,\n87 is used for Waves mainnet, 84 for Waves testnet",
-          "type": "number"
         }
       },
       "required": [
@@ -994,7 +1229,7 @@
         "version"
       ]
     },
-    "IInvokeScriptCall": {
+    "IInvokeScriptCall<LONG>": {
       "type": "object",
       "properties": {
         "function": {
@@ -1005,28 +1240,22 @@
           "description": "Array of function arguments. E.g.:\n{type: 'integer', value: 200} or\n{ type: 'binary', value: 'base64:AQa3b8tH'}",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "type": {
-                "enum": [
-                  "binary",
-                  "boolean",
-                  "integer",
-                  "string"
-                ],
-                "type": "string"
+            "anyOf": [
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallStringArgument"
               },
-              "value": {
-                "type": [
-                  "string",
-                  "number",
-                  "boolean"
-                ]
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallBinaryArgument"
+              },
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallBoolArgument"
+              },
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+              },
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallListArgument<LONG>"
               }
-            },
-            "required": [
-              "type",
-              "value"
             ]
           }
         }
@@ -1036,7 +1265,113 @@
         "function"
       ]
     },
-    "IInvokeScriptPayment<string|number>": {
+    "IInvokeScriptCallStringArgument": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "string"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IInvokeScriptCallBinaryArgument": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "binary"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IInvokeScriptCallBoolArgument": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "boolean"
+          ]
+        },
+        "value": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IInvokeScriptCallIntegerArgument<LONG>": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "integer"
+          ]
+        },
+        "value": {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IInvokeScriptCallListArgument<LONG>": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "list"
+          ]
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallStringArgument"
+              },
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallBinaryArgument"
+              },
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallBoolArgument"
+              },
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IInvokeScriptPayment<TChainId>": {
       "type": "object",
       "properties": {
         "assetId": {
@@ -1056,8 +1391,71 @@
         "amount",
         "assetId"
       ]
+    },
+    "IUpdateAssetInfoTransaction<LONG>": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "number",
+          "enum": [
+            17
+          ]
+        },
+        "assetId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "number"
+        },
+        "fee": {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json#/definitions/LONG"
+        },
+        "version": {
+          "type": "number"
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "proofs": {
+          "description": "ITransaction signatures",
+          "minItems": 0,
+          "maxItems": 8,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "senderPublicKey": {
+          "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assetId",
+        "chainId",
+        "description",
+        "fee",
+        "name",
+        "proofs",
+        "senderPublicKey",
+        "timestamp",
+        "type",
+        "version"
+      ]
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/TTx.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/TTx.json"
 }

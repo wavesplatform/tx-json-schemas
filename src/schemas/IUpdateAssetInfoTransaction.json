@@ -4,20 +4,23 @@
     "type": {
       "type": "number",
       "enum": [
-        6
+        17
       ]
     },
     "assetId": {
       "type": "string"
     },
-    "amount": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IBurnTransaction.json#/definitions/LONG"
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
     },
     "timestamp": {
       "type": "number"
     },
     "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IBurnTransaction.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IUpdateAssetInfoTransaction.json#/definitions/LONG"
     },
     "version": {
       "type": "number"
@@ -46,10 +49,11 @@
     }
   },
   "required": [
-    "amount",
     "assetId",
     "chainId",
+    "description",
     "fee",
+    "name",
     "proofs",
     "senderPublicKey",
     "timestamp",
@@ -64,5 +68,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IBurnTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IUpdateAssetInfoTransaction.json"
 }

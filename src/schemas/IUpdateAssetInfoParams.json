@@ -1,11 +1,17 @@
 {
   "type": "object",
   "properties": {
-    "recipient": {
+    "assetId": {
+      "description": "Id of previously issued asset",
       "type": "string"
     },
-    "amount": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ILeaseParams.json#/definitions/LONG"
+    "name": {
+      "description": "New asset name",
+      "type": "string"
+    },
+    "description": {
+      "description": "New asset description",
+      "type": "string"
     },
     "version": {
       "description": "Transaction version. If not set, the latest available version will be used.",
@@ -13,7 +19,7 @@
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ILeaseParams.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IUpdateAssetInfoParams.json#/definitions/LONG"
     },
     "additionalFee": {
       "description": "If fee is not set, this value will be added to automatically calculated fee. E.x.:\nAccount is scripted and 400000 fee more is required.",
@@ -36,8 +42,9 @@
     }
   },
   "required": [
-    "amount",
-    "recipient"
+    "assetId",
+    "description",
+    "name"
   ],
   "definitions": {
     "LONG": {
@@ -47,5 +54,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/ILeaseParams.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IUpdateAssetInfoParams.json"
 }

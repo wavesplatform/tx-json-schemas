@@ -6,10 +6,96 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/IDataEntry"
+            "allOf": [
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/IBooleanData"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "key"
+                ]
+              }
+            ]
           },
           {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/ITypelessDataEntry"
+            "allOf": [
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/IIntegerData<TChainId>"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "key"
+                ]
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/IStringData"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "key"
+                ]
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/IBinaryData"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "key"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "null"
+              },
+              "value": {
+                "type": "null"
+              },
+              "key": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "key"
+            ]
+          },
+          {
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/ITypelessDataEntry"
           }
         ]
       }
@@ -20,7 +106,7 @@
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/LONG"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json#/definitions/LONG"
     },
     "additionalFee": {
       "description": "If fee is not set, this value will be added to automatically calculated fee. E.x.:\nAccount is scripted and 400000 fee more is required.",
@@ -33,43 +119,93 @@
     "timestamp": {
       "description": "Transaction timestamp. If not set current timestamp will be used. Date.now()",
       "type": "number"
+    },
+    "chainId": {
+      "description": "Network byte. Could be set as number or as char.\nIf set as char(string), charCodeAt(0) will be used. E.g.,\n'W' will be converted to '87'\nIf not set, 87 will be used as default",
+      "type": [
+        "string",
+        "number"
+      ]
     }
   },
   "required": [
     "data"
   ],
   "definitions": {
-    "IDataEntry": {
+    "IBooleanData": {
       "type": "object",
       "properties": {
-        "key": {
-          "type": "string"
-        },
         "type": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json#/definitions/TDataFiledType"
-        },
-        "value": {
-          "type": [
-            "string",
-            "number",
+          "type": "string",
+          "enum": [
             "boolean"
           ]
+        },
+        "value": {
+          "type": "boolean"
         }
       },
       "required": [
-        "key",
         "type",
         "value"
       ]
     },
-    "TDataFiledType": {
-      "enum": [
-        "binary",
-        "boolean",
-        "integer",
-        "string"
-      ],
-      "type": "string"
+    "IIntegerData<TChainId>": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "integer"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "number"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IStringData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "string"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "IBinaryData": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "binary"
+          ]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
     },
     "ITypelessDataEntry": {
       "type": "object",
@@ -117,5 +253,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/waves-transactions/master/src/schemas/IDataParams.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/stagenet/src/schemas/IDataParams.json"
 }

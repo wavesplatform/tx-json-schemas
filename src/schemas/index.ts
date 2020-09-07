@@ -13,6 +13,7 @@ import ISetAssetScriptTransaction from './ISetAssetScriptTransaction.json'
 import IDataTransaction from './IDataTransaction.json'
 import ISponsorshipTransaction from './ISponsorshipTransaction.json'
 import IInvokeScriptTransaction from './IInvokeScriptTransaction.json'
+import IUpdateAssetInfoTransaction from './IUpdateAssetInfoTransaction.json'
 import IOrder from './IOrder.json'
 import IOrderParams from './IOrderParams.json'
 import ICancelOrder from './ICancelOrder.json'
@@ -31,6 +32,7 @@ import IDataParams from './IDataParams.json'
 import ISponsorshipParams from './ISponsorshipParams.json'
 import IInvokeScriptParams from './IInvokeScriptParams.json'
 import IInvokeScriptPayment from './IInvokeScriptPayment.json'
+import IUpdateAssetInfoParams from './IUpdateAssetInfoParams.json'
 import IInvokeScriptCall from './IInvokeScriptCall.json'
 import INodeRequestOptions from './INodeRequestOptions.json'
 import TSeedTypes from './TSeedTypes.json'
@@ -52,6 +54,7 @@ export default {
   IDataTransaction,
   ISponsorshipTransaction,
   IInvokeScriptTransaction,
+  IUpdateAssetInfoTransaction,
   IOrder,
   IOrderParams,
   ICancelOrder,
@@ -70,6 +73,7 @@ export default {
   ISponsorshipParams,
   IInvokeScriptParams,
   IInvokeScriptPayment,
+  IUpdateAssetInfoParams,
   IInvokeScriptCall,
   INodeRequestOptions,
   TSeedTypes,
