@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/wavesplatform/tx-json-schemas#readme",
   "dependencies": {
-    "@waves/waves-transactions": "^4.0.0-beta.26",
+    "@waves/waves-transactions": "^4.1.0",
     "ajv": "^6.10.0"
   },
   "devDependencies": {
