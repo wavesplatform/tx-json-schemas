@@ -60,9 +60,7 @@ function buildSchemas() {
         resolveJsonModule: true,
         allowSyntheticDefaultImports: true,
         downlevelIteration: true,
-        lib: [
-            'esnext'
-        ]
+        lib: ["dom", "es2016", "es2017"]
     };
 
     const program = TJS.getProgramFromFiles([resolve('./node_modules/@waves/waves-transactions/dist/index.d.ts')], compilerOptions);
