@@ -23,22 +23,9 @@
     },
     "attachment": {
       "description": "Bytearray encoded as base58 string",
-      "anyOf": [
-        {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferParams.json#/definitions/IBooleanData"
-        },
-        {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferParams.json#/definitions/IIntegerData<TChainId>"
-        },
-        {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferParams.json#/definitions/IStringData"
-        },
-        {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferParams.json#/definitions/IBinaryData"
-        },
-        {
-          "type": "string"
-        }
+      "type": [
+        "null",
+        "string"
       ]
     },
     "version": {
@@ -77,81 +64,6 @@
     "LONG": {
       "type": [
         "number"
-      ]
-    },
-    "IBooleanData": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "boolean"
-          ]
-        },
-        "value": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IIntegerData<TChainId>": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "integer"
-          ]
-        },
-        "value": {
-          "type": [
-            "string",
-            "number"
-          ]
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IStringData": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "string"
-          ]
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IBinaryData": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "binary"
-          ]
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "value"
       ]
     }
   },
