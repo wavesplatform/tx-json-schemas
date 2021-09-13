@@ -100,6 +100,12 @@ export const schemaTypeMap: { [i: number]: { schema: any, paramsSchema: any, val
         paramsSchema: schemas.IUpdateAssetInfoParams,
         validator: validators.UpdateAssetInfoTransaction,
         paramsValidator: validators.IUpdateAssetInfoParams,
+    },
+    [TRANSACTION_TYPE.INVOKE_EXPRESSION]: {
+        schema: schemas.InvokeExpressionTransaction,
+        paramsSchema: schemas.IInvokeExpressionParams,
+        validator: validators.InvokeExpressionTransaction,
+        paramsValidator: validators.IInvokeExpressionParams,
     }
 };
 

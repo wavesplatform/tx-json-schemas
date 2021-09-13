@@ -14,6 +14,7 @@ import DataTransaction from './DataTransaction.json'
 import SponsorshipTransaction from './SponsorshipTransaction.json'
 import InvokeScriptTransaction from './InvokeScriptTransaction.json'
 import UpdateAssetInfoTransaction from './UpdateAssetInfoTransaction.json'
+import InvokeExpressionTransaction from './InvokeExpressionTransaction.json'
 import ExchangeTransactionOrder from './ExchangeTransactionOrder.json'
 import IOrderParams from './IOrderParams.json'
 import ICancelOrder from './ICancelOrder.json'
@@ -34,6 +35,7 @@ import IInvokeScriptParams from './IInvokeScriptParams.json'
 import IUpdateAssetInfoParams from './IUpdateAssetInfoParams.json'
 import INodeRequestOptions from './INodeRequestOptions.json'
 import InvokeScriptCallArgument from './InvokeScriptCallArgument.json'
+import IInvokeExpressionParams from './IInvokeExpressionParams.json'
 import TSeedTypes from './TSeedTypes.json'
 import WithId from './WithId.json'
 import WithTxType from './WithTxType.json'
@@ -54,6 +56,7 @@ export default {
   SponsorshipTransaction,
   InvokeScriptTransaction,
   UpdateAssetInfoTransaction,
+  InvokeExpressionTransaction,
   ExchangeTransactionOrder,
   IOrderParams,
   ICancelOrder,
@@ -74,6 +77,7 @@ export default {
   IUpdateAssetInfoParams,
   INodeRequestOptions,
   InvokeScriptCallArgument,
+  IInvokeExpressionParams,
   TSeedTypes,
   WithId,
   WithTxType

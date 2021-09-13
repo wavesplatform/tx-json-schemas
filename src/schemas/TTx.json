@@ -9360,6 +9360,92 @@
           ]
         }
       ]
+    },
+    {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "expression": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "feeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "expression",
+            "feeAssetId"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "enum": [
+                18
+              ]
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "type": [
+                "string",
+                "number"
+              ]
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "enum": [
+                1
+              ]
+            }
+          },
+          "required": [
+            "version"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "proofs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "proofs"
+          ]
+        }
+      ]
     }
   ],
   "definitions": {

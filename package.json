@@ -1,6 +1,6 @@
 {
   "name": "@waves/tx-json-schemas",
-  "version": "1.2.3",
+  "version": "1.2.4-beta.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/wavesplatform/tx-json-schemas#readme",
   "dependencies": {
-    "@waves/waves-transactions": "4.2.1",
-    "@waves/ts-types": "^1.0.5",
+    "@waves/waves-transactions": "4.2.1-beta.3",
+    "@waves/ts-types": "^1.0.6-beta.4",
     "ajv": "^6.10.0"
   },
   "devDependencies": {

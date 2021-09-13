@@ -19,6 +19,7 @@ const TYPES = [
     'SponsorshipTransaction',
     'InvokeScriptTransaction',
     'UpdateAssetInfoTransaction',
+    'InvokeExpressionTransaction',
     'ExchangeTransactionOrder',
     'IOrderParams',
     'ICancelOrder',
@@ -39,6 +40,7 @@ const TYPES = [
     'IUpdateAssetInfoParams',
     'INodeRequestOptions',
     'InvokeScriptCallArgument',
+    'IInvokeExpressionParams',
     'TSeedTypes',
     'WithId',
     'WithTxType'
