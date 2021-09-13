@@ -6,85 +6,123 @@
       "items": {
         "anyOf": [
           {
-            "allOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/IBooleanData"
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
               },
-              {
-                "type": "object",
-                "properties": {
-                  "key": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "key"
+              "type": {
+                "type": "string",
+                "enum": [
+                  "string"
                 ]
+              },
+              "value": {
+                "type": "string"
               }
+            },
+            "required": [
+              "key",
+              "type",
+              "value"
             ]
           },
           {
-            "allOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/IIntegerData<TChainId>"
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
               },
-              {
-                "type": "object",
-                "properties": {
-                  "key": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "key"
+              "type": {
+                "type": "string",
+                "enum": [
+                  "binary"
                 ]
+              },
+              "value": {
+                "type": "string"
               }
+            },
+            "required": [
+              "key",
+              "type",
+              "value"
             ]
           },
           {
-            "allOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/IStringData"
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
               },
-              {
-                "type": "object",
-                "properties": {
-                  "key": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "key"
+              "type": {
+                "type": "string",
+                "enum": [
+                  "boolean"
                 ]
-              }
-            ]
-          },
-          {
-            "allOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/IBinaryData"
               },
-              {
-                "type": "object",
-                "properties": {
-                  "key": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "key"
-                ]
+              "value": {
+                "type": "boolean"
               }
+            },
+            "required": [
+              "key",
+              "type",
+              "value"
             ]
           },
           {
             "type": "object",
             "properties": {
               "type": {
-                "type": "null"
+                "type": "undefined"
               },
               "value": {
-                "type": "null"
+                "type": "undefined"
+              },
+              "key": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "key",
+              "type",
+              "value"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "integer"
+                ]
+              },
+              "value": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              }
+            },
+            "required": [
+              "key",
+              "type",
+              "value"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "undefined"
+              },
+              "value": {
+                "type": "undefined"
               },
               "key": {
                 "type": "string"
@@ -93,16 +131,9 @@
             "required": [
               "key"
             ]
-          },
-          {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataParams.json#/definitions/ITypelessDataEntry"
           }
         ]
       }
-    },
-    "version": {
-      "description": "Transaction version. If not set, the latest available version will be used.",
-      "type": "number"
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
@@ -132,120 +163,6 @@
     "data"
   ],
   "definitions": {
-    "IBooleanData": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "boolean"
-          ]
-        },
-        "value": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IIntegerData<TChainId>": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "integer"
-          ]
-        },
-        "value": {
-          "type": [
-            "string",
-            "number"
-          ]
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IStringData": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "string"
-          ]
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IBinaryData": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "binary"
-          ]
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "ITypelessDataEntry": {
-      "type": "object",
-      "properties": {
-        "key": {
-          "type": "string"
-        },
-        "value": {
-          "anyOf": [
-            {
-              "description": "A typed array of 8-bit unsigned integer values. The contents are initialized to 0. If the\nrequested number of bytes could not be allocated an exception is raised.",
-              "type": "object",
-              "additionalProperties": false,
-              "patternProperties": {
-                "^[0-9]+$": {
-                  "type": "number"
-                }
-              }
-            },
-            {
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
-            },
-            {
-              "type": [
-                "string",
-                "number",
-                "boolean"
-              ]
-            }
-          ]
-        }
-      },
-      "required": [
-        "key",
-        "value"
-      ]
-    },
     "LONG": {
       "type": [
         "number"

@@ -1,6 +1,6 @@
 import Ajv = require('ajv')
 import { mapObj } from "@waves/waves-transactions/dist/generic";
-import { TRANSACTION_TYPE } from '@waves/waves-transactions/dist/transactions';
+import { TRANSACTION_TYPE } from '@waves/ts-types';
 import schemas from './schemas';
 
 const ajv = Ajv({
@@ -11,94 +11,94 @@ export const validators = mapObj(schemas, (schema: any) => ajv.compile(schema));
 
 export const schemaTypeMap: { [i: number]: { schema: any, paramsSchema: any, validator: Ajv.ValidateFunction, paramsValidator: Ajv.ValidateFunction } } = {
     [TRANSACTION_TYPE.ISSUE]: {
-        schema: schemas.IIssueTransaction,
+        schema: schemas.IssueTransaction,
         paramsSchema: schemas.IIssueParams,
-        validator: validators.IIssueTransaction,
+        validator: validators.IssueTransaction,
         paramsValidator: validators.IIssueParams,
     },
     [TRANSACTION_TYPE.TRANSFER]: {
-        schema: schemas.ITransferTransaction,
+        schema: schemas.TransferTransaction,
         paramsSchema: schemas.ITransferParams,
-        validator: validators.ITransferTransaction,
+        validator: validators.TransferTransaction,
         paramsValidator: validators.ITransferParams,
     },
     [TRANSACTION_TYPE.REISSUE]: {
-        schema: schemas.IReissueTransaction,
+        schema: schemas.ReissueTransaction,
         paramsSchema: schemas.IReissueParams,
-        validator: validators.IReissueTransaction,
+        validator: validators.ReissueTransaction,
         paramsValidator: validators.IReissueParams,
     },
     [TRANSACTION_TYPE.BURN]: {
-        schema: schemas.IBurnTransaction,
+        schema: schemas.BurnTransaction,
         paramsSchema: schemas.IBurnParams,
-        validator: validators.IBurnTransaction,
+        validator: validators.BurnTransaction,
         paramsValidator: validators.IBurnParams,
     },
     [TRANSACTION_TYPE.EXCHANGE]: {
-        schema: schemas.IExchangeTransaction,
-        paramsSchema: schemas.IExchangeTransaction,
-        validator: validators.IExchangeTransaction,
-        paramsValidator: validators.IExchangeTransaction,
+        schema: schemas.ExchangeTransaction,
+        paramsSchema: schemas.ExchangeTransaction,
+        validator: validators.ExchangeTransaction,
+        paramsValidator: validators.ExchangeTransaction,
     },
     [TRANSACTION_TYPE.LEASE]: {
-        schema: schemas.ILeaseTransaction,
+        schema: schemas.LeaseTransaction,
         paramsSchema: schemas.ILeaseParams,
-        validator: validators.ILeaseTransaction,
+        validator: validators.LeaseTransaction,
         paramsValidator: validators.ILeaseParams,
     },
     [TRANSACTION_TYPE.CANCEL_LEASE]: {
-        schema: schemas.ICancelLeaseTransaction,
+        schema: schemas.CancelLeaseTransaction,
         paramsSchema: schemas.ICancelLeaseParams,
-        validator: validators.ICancelLeaseTransaction,
+        validator: validators.CancelLeaseTransaction,
         paramsValidator: validators.ICancelLeaseParams,
     },
     [TRANSACTION_TYPE.ALIAS]: {
-        schema: schemas.IAliasTransaction,
+        schema: schemas.AliasTransaction,
         paramsSchema: schemas.IAliasParams,
-        validator: validators.IAliasTransaction,
+        validator: validators.AliasTransaction,
         paramsValidator: validators.IAliasParams,
     },
 
     [TRANSACTION_TYPE.MASS_TRANSFER]: {
-        schema: schemas.IMassTransferTransaction,
+        schema: schemas.MassTransferTransaction,
         paramsSchema: schemas.IMassTransferParams,
-        validator: validators.IMassTransferTransaction,
+        validator: validators.MassTransferTransaction,
         paramsValidator: validators.IMassTransferParams,
     },
     [TRANSACTION_TYPE.DATA]: {
-        schema: schemas.IDataTransaction,
+        schema: schemas.DataTransaction,
         paramsSchema: schemas.IDataParams,
-        validator: validators.IDataTransaction,
+        validator: validators.DataTransaction,
         paramsValidator: validators.IDataParams,
     },
     [TRANSACTION_TYPE.SET_SCRIPT]: {
-        schema: schemas.ISetScriptTransaction,
+        schema: schemas.SetScriptTransaction,
         paramsSchema: schemas.ISetScriptParams,
-        validator: validators.ISetScriptTransaction,
+        validator: validators.SetScriptTransaction,
         paramsValidator: validators.ISetScriptParams,
     },
     [TRANSACTION_TYPE.SPONSORSHIP]: {
-        schema: schemas.ISponsorshipTransaction,
+        schema: schemas.SponsorshipTransaction,
         paramsSchema: schemas.ISponsorshipParams,
-        validator: validators.ISponsorshipTransaction,
+        validator: validators.SponsorshipTransaction,
         paramsValidator: validators.ISponsorshipParams,
     },
     [TRANSACTION_TYPE.SET_ASSET_SCRIPT]: {
-        schema: schemas.ISetAssetScriptTransaction,
+        schema: schemas.SetAssetScriptTransaction,
         paramsSchema: schemas.ISetAssetScriptParams,
-        validator: validators.ISetAssetScriptTransaction,
+        validator: validators.SetAssetScriptTransaction,
         paramsValidator: validators.ISetAssetScriptParams,
     },
     [TRANSACTION_TYPE.INVOKE_SCRIPT]: {
-        schema: schemas.IInvokeScriptTransaction,
+        schema: schemas.InvokeScriptTransaction,
         paramsSchema: schemas.IInvokeScriptParams,
-        validator: validators.IInvokeScriptTransaction,
+        validator: validators.InvokeScriptTransaction,
         paramsValidator: validators.IInvokeScriptParams,
     },
     [TRANSACTION_TYPE.UPDATE_ASSET_INFO]: {
-        schema: schemas.IUpdateAssetInfoTransaction,
+        schema: schemas.UpdateAssetInfoTransaction,
         paramsSchema: schemas.IUpdateAssetInfoParams,
-        validator: validators.IUpdateAssetInfoTransaction,
+        validator: validators.UpdateAssetInfoTransaction,
         paramsValidator: validators.IUpdateAssetInfoParams,
     }
 };

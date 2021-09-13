@@ -2,7 +2,6 @@
   "type": "object",
   "properties": {
     "id": {
-      "description": "Transaction ID. 32 bytes hash encoded as base58 string",
       "type": "string"
     }
   },

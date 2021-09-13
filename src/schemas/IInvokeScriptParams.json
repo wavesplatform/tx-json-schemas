@@ -21,19 +21,173 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallStringArgument"
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "string"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "value"
+                ]
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallBinaryArgument"
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "binary"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "value"
+                ]
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallBoolArgument"
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "boolean"
+                    ]
+                  },
+                  "value": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "type",
+                  "value"
+                ]
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "integer"
+                    ]
+                  },
+                  "value": {
+                    "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/LONG"
+                  }
+                },
+                "required": [
+                  "type",
+                  "value"
+                ]
               },
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallListArgument<LONG>"
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "list"
+                    ]
+                  },
+                  "value": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "string"
+                              ]
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "binary"
+                              ]
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "boolean"
+                              ]
+                            },
+                            "value": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "integer"
+                              ]
+                            },
+                            "value": {
+                              "type": [
+                                "string",
+                                "number"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "value"
+                ]
               }
             ]
           }
@@ -63,10 +217,6 @@
         ]
       }
     },
-    "version": {
-      "description": "Transaction version. If not set, the latest available version will be used.",
-      "type": "number"
-    },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
       "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/LONG"
@@ -95,115 +245,9 @@
     "dApp"
   ],
   "definitions": {
-    "IInvokeScriptCallStringArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "string"
-          ]
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IInvokeScriptCallBinaryArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "binary"
-          ]
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IInvokeScriptCallBoolArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "boolean"
-          ]
-        },
-        "value": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IInvokeScriptCallIntegerArgument<LONG>": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "integer"
-          ]
-        },
-        "value": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/LONG"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
     "LONG": {
       "type": [
         "number"
-      ]
-    },
-    "IInvokeScriptCallListArgument<LONG>": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "list"
-          ]
-        },
-        "value": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallStringArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallBinaryArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallBoolArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptParams.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
-              }
-            ]
-          }
-        }
-      },
-      "required": [
-        "type",
-        "value"
       ]
     }
   },

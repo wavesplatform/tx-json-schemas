@@ -19,14 +19,16 @@
   },
   "homepage": "https://github.com/wavesplatform/tx-json-schemas#readme",
   "dependencies": {
-    "@waves/waves-transactions": "4.1.6",
+    "@waves/waves-transactions": "4.2.1",
+    "@waves/ts-types": "^1.0.5",
     "ajv": "^6.10.0"
   },
   "devDependencies": {
-    "@types/node": "^12.0.2",
-    "fs-extra": "^8.0.1",
+    "@types/ajv": "^1.0.0",
+    "@types/node": "^15.14.9",
+    "fs-extra": "^10.0.0",
     "tslint": "^5.16.0",
-    "typescript": "^3.4.5",
-    "typescript-json-schema": "^0.38.0"
+    "typescript": "^4.4.2",
+    "typescript-json-schema": "^0.50.1"
   }
 }

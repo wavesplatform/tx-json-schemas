@@ -1,20 +1,20 @@
 import TTx from './TTx.json'
-import IAliasTransaction from './IAliasTransaction.json'
-import IIssueTransaction from './IIssueTransaction.json'
-import ITransferTransaction from './ITransferTransaction.json'
-import IReissueTransaction from './IReissueTransaction.json'
-import IBurnTransaction from './IBurnTransaction.json'
-import IExchangeTransaction from './IExchangeTransaction.json'
-import ILeaseTransaction from './ILeaseTransaction.json'
-import ICancelLeaseTransaction from './ICancelLeaseTransaction.json'
-import IMassTransferTransaction from './IMassTransferTransaction.json'
-import ISetScriptTransaction from './ISetScriptTransaction.json'
-import ISetAssetScriptTransaction from './ISetAssetScriptTransaction.json'
-import IDataTransaction from './IDataTransaction.json'
-import ISponsorshipTransaction from './ISponsorshipTransaction.json'
-import IInvokeScriptTransaction from './IInvokeScriptTransaction.json'
-import IUpdateAssetInfoTransaction from './IUpdateAssetInfoTransaction.json'
-import IOrder from './IOrder.json'
+import AliasTransaction from './AliasTransaction.json'
+import IssueTransaction from './IssueTransaction.json'
+import TransferTransaction from './TransferTransaction.json'
+import ReissueTransaction from './ReissueTransaction.json'
+import BurnTransaction from './BurnTransaction.json'
+import ExchangeTransaction from './ExchangeTransaction.json'
+import LeaseTransaction from './LeaseTransaction.json'
+import CancelLeaseTransaction from './CancelLeaseTransaction.json'
+import MassTransferTransaction from './MassTransferTransaction.json'
+import SetScriptTransaction from './SetScriptTransaction.json'
+import SetAssetScriptTransaction from './SetAssetScriptTransaction.json'
+import DataTransaction from './DataTransaction.json'
+import SponsorshipTransaction from './SponsorshipTransaction.json'
+import InvokeScriptTransaction from './InvokeScriptTransaction.json'
+import UpdateAssetInfoTransaction from './UpdateAssetInfoTransaction.json'
+import ExchangeTransactionOrder from './ExchangeTransactionOrder.json'
 import IOrderParams from './IOrderParams.json'
 import ICancelOrder from './ICancelOrder.json'
 import ICancelOrderParams from './ICancelOrderParams.json'
@@ -31,31 +31,30 @@ import ISetAssetScriptParams from './ISetAssetScriptParams.json'
 import IDataParams from './IDataParams.json'
 import ISponsorshipParams from './ISponsorshipParams.json'
 import IInvokeScriptParams from './IInvokeScriptParams.json'
-import IInvokeScriptPayment from './IInvokeScriptPayment.json'
 import IUpdateAssetInfoParams from './IUpdateAssetInfoParams.json'
-import IInvokeScriptCall from './IInvokeScriptCall.json'
 import INodeRequestOptions from './INodeRequestOptions.json'
+import InvokeScriptCallArgument from './InvokeScriptCallArgument.json'
 import TSeedTypes from './TSeedTypes.json'
 import WithId from './WithId.json'
 import WithTxType from './WithTxType.json'
 export default {
   TTx,
-  IAliasTransaction,
-  IIssueTransaction,
-  ITransferTransaction,
-  IReissueTransaction,
-  IBurnTransaction,
-  IExchangeTransaction,
-  ILeaseTransaction,
-  ICancelLeaseTransaction,
-  IMassTransferTransaction,
-  ISetScriptTransaction,
-  ISetAssetScriptTransaction,
-  IDataTransaction,
-  ISponsorshipTransaction,
-  IInvokeScriptTransaction,
-  IUpdateAssetInfoTransaction,
-  IOrder,
+  AliasTransaction,
+  IssueTransaction,
+  TransferTransaction,
+  ReissueTransaction,
+  BurnTransaction,
+  ExchangeTransaction,
+  LeaseTransaction,
+  CancelLeaseTransaction,
+  MassTransferTransaction,
+  SetScriptTransaction,
+  SetAssetScriptTransaction,
+  DataTransaction,
+  SponsorshipTransaction,
+  InvokeScriptTransaction,
+  UpdateAssetInfoTransaction,
+  ExchangeTransactionOrder,
   IOrderParams,
   ICancelOrder,
   ICancelOrderParams,
@@ -72,10 +71,9 @@ export default {
   IDataParams,
   ISponsorshipParams,
   IInvokeScriptParams,
-  IInvokeScriptPayment,
   IUpdateAssetInfoParams,
-  IInvokeScriptCall,
   INodeRequestOptions,
+  InvokeScriptCallArgument,
   TSeedTypes,
   WithId,
   WithTxType

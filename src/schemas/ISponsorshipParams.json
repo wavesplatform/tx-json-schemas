@@ -9,10 +9,6 @@
       "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ISponsorshipParams.json#/definitions/LONG",
       "description": "Minimal fee amount in sponsored asset. To disable sponsorship set it to 0"
     },
-    "version": {
-      "description": "Transaction version. If not set, the latest available version will be used.",
-      "type": "number"
-    },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
       "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ISponsorshipParams.json#/definitions/LONG"
