@@ -8,10 +8,10 @@
       ]
     },
     "order1": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/IOrder<TChainId>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/IOrder<string|number>"
     },
     "order2": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/IOrder<TChainId>"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/IOrder<string|number>"
     },
     "price": {
       "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
@@ -73,7 +73,7 @@
     "version"
   ],
   "definitions": {
-    "IOrder<TChainId>": {
+    "IOrder<string|number>": {
       "type": "object",
       "properties": {
         "version": {

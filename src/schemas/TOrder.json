@@ -1,0 +1,416 @@
+{
+  "anyOf": [
+    {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number"
+            },
+            "orderType": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TOrder.json#/definitions/ExchangeTransactionOrderType"
+            },
+            "assetPair": {
+              "type": "object",
+              "properties": {
+                "amountAsset": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "priceAsset": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "amountAsset",
+                "priceAsset"
+              ]
+            },
+            "price": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "amount": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "expiration": {
+              "type": "number"
+            },
+            "matcherFee": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "matcherPublicKey": {
+              "type": "string"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "assetPair",
+            "expiration",
+            "matcherFee",
+            "matcherPublicKey",
+            "orderType",
+            "price",
+            "senderPublicKey",
+            "timestamp",
+            "version"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "enum": [
+                1
+              ]
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number"
+            },
+            "orderType": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TOrder.json#/definitions/ExchangeTransactionOrderType"
+            },
+            "assetPair": {
+              "type": "object",
+              "properties": {
+                "amountAsset": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "priceAsset": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "amountAsset",
+                "priceAsset"
+              ]
+            },
+            "price": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "amount": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "expiration": {
+              "type": "number"
+            },
+            "matcherFee": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "matcherPublicKey": {
+              "type": "string"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "assetPair",
+            "expiration",
+            "matcherFee",
+            "matcherPublicKey",
+            "orderType",
+            "price",
+            "senderPublicKey",
+            "timestamp",
+            "version"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "enum": [
+                2
+              ]
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number"
+            },
+            "orderType": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TOrder.json#/definitions/ExchangeTransactionOrderType"
+            },
+            "assetPair": {
+              "type": "object",
+              "properties": {
+                "amountAsset": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "priceAsset": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "amountAsset",
+                "priceAsset"
+              ]
+            },
+            "price": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "amount": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "expiration": {
+              "type": "number"
+            },
+            "matcherFee": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "matcherPublicKey": {
+              "type": "string"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "assetPair",
+            "expiration",
+            "matcherFee",
+            "matcherPublicKey",
+            "orderType",
+            "price",
+            "senderPublicKey",
+            "timestamp",
+            "version"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "matcherFeeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "matcherFeeAssetId"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "enum": [
+                3
+              ]
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number"
+            },
+            "orderType": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TOrder.json#/definitions/ExchangeTransactionOrderType"
+            },
+            "assetPair": {
+              "type": "object",
+              "properties": {
+                "amountAsset": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "priceAsset": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "amountAsset",
+                "priceAsset"
+              ]
+            },
+            "price": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "amount": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "expiration": {
+              "type": "number"
+            },
+            "matcherFee": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "matcherPublicKey": {
+              "type": "string"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "assetPair",
+            "expiration",
+            "matcherFee",
+            "matcherPublicKey",
+            "orderType",
+            "price",
+            "senderPublicKey",
+            "timestamp",
+            "version"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "matcherFeeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "matcherFeeAssetId"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "enum": [
+                4
+              ]
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    }
+  ],
+  "definitions": {
+    "ExchangeTransactionOrderType": {
+      "enum": [
+        "buy",
+        "sell"
+      ],
+      "type": "string"
+    },
+    "LONG": {
+      "type": [
+        "number"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TOrder.json"
+}

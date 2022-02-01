@@ -1,0 +1,595 @@
+{
+  "anyOf": [
+    {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "dApp": {
+              "type": "string"
+            },
+            "call": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "function": {
+                      "type": "string"
+                    },
+                    "args": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "string"
+                                ]
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "binary"
+                                ]
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "boolean"
+                                ]
+                              },
+                              "value": {
+                                "type": "boolean"
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "integer"
+                                ]
+                              },
+                              "value": {
+                                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeScriptTransaction.json#/definitions/LONG"
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "list"
+                                ]
+                              },
+                              "value": {
+                                "type": "array",
+                                "items": {
+                                  "anyOf": [
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "string"
+                                          ]
+                                        },
+                                        "value": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "binary"
+                                          ]
+                                        },
+                                        "value": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "boolean"
+                                          ]
+                                        },
+                                        "value": {
+                                          "type": "boolean"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "integer"
+                                          ]
+                                        },
+                                        "value": {
+                                          "type": [
+                                            "string",
+                                            "number"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "value"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "function"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "feeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "payment": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "assetId": {
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                      },
+                      "amount": {
+                        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeScriptTransaction.json#/definitions/LONG"
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "assetId"
+                    ]
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "call",
+            "dApp",
+            "feeAssetId",
+            "payment"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "enum": [
+                16
+              ]
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeScriptTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "enum": [
+                1
+              ]
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "dApp": {
+              "type": "string"
+            },
+            "call": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "function": {
+                      "type": "string"
+                    },
+                    "args": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "string"
+                                ]
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "binary"
+                                ]
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "boolean"
+                                ]
+                              },
+                              "value": {
+                                "type": "boolean"
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "integer"
+                                ]
+                              },
+                              "value": {
+                                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeScriptTransaction.json#/definitions/LONG"
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "list"
+                                ]
+                              },
+                              "value": {
+                                "type": "array",
+                                "items": {
+                                  "anyOf": [
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "string"
+                                          ]
+                                        },
+                                        "value": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "binary"
+                                          ]
+                                        },
+                                        "value": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "boolean"
+                                          ]
+                                        },
+                                        "value": {
+                                          "type": "boolean"
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "integer"
+                                          ]
+                                        },
+                                        "value": {
+                                          "type": [
+                                            "string",
+                                            "number"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "type",
+                                        "value"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "type",
+                              "value"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "function"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "feeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "payment": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "assetId": {
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                      },
+                      "amount": {
+                        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeScriptTransaction.json#/definitions/LONG"
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "assetId"
+                    ]
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "call",
+            "dApp",
+            "feeAssetId",
+            "payment"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "enum": [
+                16
+              ]
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeScriptTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "enum": [
+                2
+              ]
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    }
+  ],
+  "definitions": {
+    "LONG": {
+      "type": [
+        "number"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeScriptTransaction.json"
+}

@@ -13,10 +13,6 @@
       "description": "New asset description",
       "type": "string"
     },
-    "version": {
-      "description": "Transaction version. If not set, the latest available version will be used.",
-      "type": "number"
-    },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
       "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IUpdateAssetInfoParams.json#/definitions/LONG"

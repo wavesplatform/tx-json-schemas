@@ -32,7 +32,7 @@
           {
             "allOf": [
               {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataTransaction.json#/definitions/IIntegerData<TChainId>"
+                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IDataTransaction.json#/definitions/IIntegerData<string|number>"
               },
               {
                 "type": "object",
@@ -164,7 +164,7 @@
         "value"
       ]
     },
-    "IIntegerData<TChainId>": {
+    "IIntegerData<string|number>": {
       "type": "object",
       "properties": {
         "type": {

@@ -1,0 +1,78 @@
+{
+  "allOf": [
+    {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "feeAssetId": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "expression",
+        "feeAssetId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "number",
+          "enum": [
+            18
+          ]
+        },
+        "chainId": {
+          "type": "number"
+        },
+        "senderPublicKey": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "number"
+        },
+        "fee": {
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeExpressionTransaction.json#/definitions/LONG"
+        }
+      },
+      "required": [
+        "chainId",
+        "fee",
+        "senderPublicKey",
+        "timestamp",
+        "type"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "number",
+          "enum": [
+            1
+          ]
+        }
+      },
+      "required": [
+        "version"
+      ]
+    }
+  ],
+  "definitions": {
+    "LONG": {
+      "type": [
+        "number"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/InvokeExpressionTransaction.json"
+}

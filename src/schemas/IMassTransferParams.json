@@ -4,25 +4,30 @@
     "transfers": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IMassTransferParams.json#/definitions/IMassTransferItem<TChainId>"
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "string"
+          },
+          "amount": {
+            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IMassTransferParams.json#/definitions/LONG"
+          }
+        },
+        "required": [
+          "amount",
+          "recipient"
+        ]
       }
     },
     "attachment": {
       "description": "Bytearray encoded as base string",
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string"
     },
     "assetId": {
       "type": [
         "null",
         "string"
       ]
-    },
-    "version": {
-      "description": "Transaction version. If not set, the latest available version will be used.",
-      "type": "number"
     },
     "fee": {
       "description": "Transaction fee. If not set, fee will be calculated automatically",
@@ -52,24 +57,6 @@
     "transfers"
   ],
   "definitions": {
-    "IMassTransferItem<TChainId>": {
-      "type": "object",
-      "properties": {
-        "recipient": {
-          "type": "string"
-        },
-        "amount": {
-          "type": [
-            "string",
-            "number"
-          ]
-        }
-      },
-      "required": [
-        "amount",
-        "recipient"
-      ]
-    },
     "LONG": {
       "type": [
         "number"

@@ -22,7 +22,7 @@
     "payment": {
       "type": "array",
       "items": {
-        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptPayment<TChainId>"
+        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptPayment<string|number>"
       }
     },
     "timestamp": {
@@ -209,7 +209,7 @@
         "value"
       ]
     },
-    "IInvokeScriptPayment<TChainId>": {
+    "IInvokeScriptPayment<string|number>": {
       "type": "object",
       "properties": {
         "assetId": {

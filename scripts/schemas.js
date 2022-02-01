@@ -4,22 +4,24 @@ const TJS = require('typescript-json-schema');
 
 const TYPES = [
     'TTx',
-    'IAliasTransaction',
-    'IIssueTransaction',
-    'ITransferTransaction',
-    'IReissueTransaction',
-    'IBurnTransaction',
-    'IExchangeTransaction',
-    'ILeaseTransaction',
-    'ICancelLeaseTransaction',
-    'IMassTransferTransaction',
-    'ISetScriptTransaction',
-    'ISetAssetScriptTransaction',
-    'IDataTransaction',
-    'ISponsorshipTransaction',
-    'IInvokeScriptTransaction',
-    'IUpdateAssetInfoTransaction',
-    'IOrder',
+    'AliasTransaction',
+    'IssueTransaction',
+    'TransferTransaction',
+    'ReissueTransaction',
+    'BurnTransaction',
+    'ExchangeTransaction',
+    'LeaseTransaction',
+    'CancelLeaseTransaction',
+    'MassTransferTransaction',
+    'SetScriptTransaction',
+    'SetAssetScriptTransaction',
+    'DataTransaction',
+    'SponsorshipTransaction',
+    'InvokeScriptTransaction',
+    'UpdateAssetInfoTransaction',
+    'InvokeExpressionTransaction',
+
+    'TOrder',
     'IOrderParams',
     'ICancelOrder',
     'ICancelOrderParams',
@@ -36,13 +38,15 @@ const TYPES = [
     'IDataParams',
     'ISponsorshipParams',
     'IInvokeScriptParams',
-    'IInvokeScriptPayment',
+    'InvokeScriptPayment',
     'IUpdateAssetInfoParams',
-    'IInvokeScriptCall',
+    'IInvokeExpressionParams',
+    'InvokeScriptCallArgument',
     'INodeRequestOptions',
     'TSeedTypes',
     'WithId',
-    'WithTxType'
+    'WithTxType',
+    'TTxOrTxArray'
 ];
 
 function buildSchemas() {
@@ -70,13 +74,18 @@ function buildSchemas() {
         let schema = TJS.generateSchema(program, type, {...settings, id});
         // Define generic LONG as number in JSON schema.
         // Otherwise ot would be object. Should probably pass param that defines LONG schema;
-        schema.definitions = {...schema.definitions, LONG: {type: ['number']}};
-        const filePath = `src/schemas/${type}.json`;
-        const fileContent = JSON.stringify(schema, null, 2);
-        writeFile(filePath, fileContent, (err) => {
-            if (err) throw err;
-            console.log(`${type} schema has been written`)
-        })
+        try {
+            schema.definitions = {...schema.definitions, LONG: {type: ['number']}};
+            const filePath = `src/schemas/${type}.json`;
+            const fileContent = JSON.stringify(schema, null, 2);
+            writeFile(filePath, fileContent, (err) => {
+                if (err) throw err;
+                console.log(`${type} schema has been written`)
+            })
+        } catch (e) {
+            console.log('type', type)
+            console.log('schema', schema)
+        }
     });
 
     const manifest = `${TYPES.map(type => `import ${type} from './${type}.json'`).join('\n')}
