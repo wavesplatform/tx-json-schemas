@@ -2,30 +2,12 @@
   "type": "object",
   "properties": {
     "function": {
-      "description": "Function name",
       "type": "string"
     },
     "args": {
-      "description": "Array of function arguments. E.g.:\n{type: 'integer', value: 200} or\n{ type: 'binary', value: 'base64:AQa3b8tH'}",
       "type": "array",
       "items": {
-        "anyOf": [
-          {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallStringArgument"
-          },
-          {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBinaryArgument"
-          },
-          {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBoolArgument"
-          },
-          {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
-          },
-          {
-            "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallListArgument<LONG>"
-          }
-        ]
+        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/InvokeScriptCallArgument%3CLONG%3E"
       }
     }
   },
@@ -34,115 +16,167 @@
     "function"
   ],
   "definitions": {
-    "IInvokeScriptCallStringArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "string"
+    "InvokeScriptCallArgument<LONG>": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
           ]
         },
-        "value": {
-          "type": "string"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "binary"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "boolean"
+            },
+            "value": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "list"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "binary"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "boolean"
+                      },
+                      "value": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "integer"
+                      },
+                      "value": {
+                        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/Long"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "integer"
+            },
+            "value": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
         }
-      },
-      "required": [
-        "type",
-        "value"
       ]
     },
-    "IInvokeScriptCallBinaryArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "binary"
-          ]
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IInvokeScriptCallBoolArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "boolean"
-          ]
-        },
-        "value": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IInvokeScriptCallIntegerArgument<LONG>": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "integer"
-          ]
-        },
-        "value": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/LONG"
-        }
-      },
-      "required": [
-        "type",
-        "value"
+    "Long": {
+      "type": [
+        "string",
+        "number"
       ]
     },
     "LONG": {
       "type": [
         "number"
-      ]
-    },
-    "IInvokeScriptCallListArgument<LONG>": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "list"
-          ]
-        },
-        "value": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallStringArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBinaryArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallBoolArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptCall.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
-              }
-            ]
-          }
-        }
-      },
-      "required": [
-        "type",
-        "value"
       ]
     }
   },

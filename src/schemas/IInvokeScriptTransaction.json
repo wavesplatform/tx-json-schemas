@@ -1,173 +1,286 @@
 {
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "number",
-      "enum": [
-        16
-      ]
+  "anyOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/InvokeScriptTransactionV1%3CLONG%3E"
     },
-    "dApp": {
-      "type": "string"
-    },
-    "feeAssetId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "call": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCall<LONG>"
-    },
-    "payment": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptPayment<TChainId>"
-      }
-    },
-    "timestamp": {
-      "type": "number"
-    },
-    "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
-    },
-    "version": {
-      "type": "number"
-    },
-    "chainId": {
-      "type": "number"
-    },
-    "proofs": {
-      "description": "ITransaction signatures",
-      "minItems": 0,
-      "maxItems": 8,
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "senderPublicKey": {
-      "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
-      "type": "string"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/InvokeScriptTransactionV2%3CLONG%3E"
     }
-  },
-  "required": [
-    "chainId",
-    "dApp",
-    "fee",
-    "proofs",
-    "senderPublicKey",
-    "timestamp",
-    "type",
-    "version"
   ],
   "definitions": {
-    "IInvokeScriptCall<LONG>": {
-      "type": "object",
-      "properties": {
-        "function": {
-          "description": "Function name",
-          "type": "string"
+    "InvokeScriptTransactionV1<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "dApp": {
+              "type": "string"
+            },
+            "call": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "function": {
+                      "type": "string"
+                    },
+                    "args": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/InvokeScriptCallArgument%3CLONG%3E"
+                      }
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "function"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "feeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "payment": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "assetId": {
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                      },
+                      "amount": {
+                        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "assetId"
+                    ]
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "call",
+            "dApp",
+            "feeAssetId",
+            "payment"
+          ]
         },
-        "args": {
-          "description": "Array of function arguments. E.g.:\n{type: 'integer', value: 200} or\n{ type: 'binary', value: 'base64:AQa3b8tH'}",
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallStringArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBinaryArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBoolArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallListArgument<LONG>"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 16
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 1
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    "InvokeScriptCallArgument<LONG>": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "binary"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "boolean"
+            },
+            "value": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "list"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "binary"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "boolean"
+                      },
+                      "value": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "const": "integer"
+                      },
+                      "value": {
+                        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/Long"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ]
+                  }
+                ]
               }
-            ]
-          }
-        }
-      },
-      "required": [
-        "args",
-        "function"
-      ]
-    },
-    "IInvokeScriptCallStringArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
           ]
         },
-        "value": {
-          "type": "string"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "integer"
+            },
+            "value": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ]
         }
-      },
-      "required": [
-        "type",
-        "value"
       ]
     },
-    "IInvokeScriptCallBinaryArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "binary"
-          ]
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IInvokeScriptCallBoolArgument": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "boolean"
-          ]
-        },
-        "value": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IInvokeScriptCallIntegerArgument<LONG>": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "integer"
-          ]
-        },
-        "value": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
-        }
-      },
-      "required": [
-        "type",
-        "value"
+    "Long": {
+      "type": [
+        "string",
+        "number"
       ]
     },
     "LONG": {
@@ -175,59 +288,121 @@
         "number"
       ]
     },
-    "IInvokeScriptCallListArgument<LONG>": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "list"
+    "InvokeScriptTransactionV2<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "dApp": {
+              "type": "string"
+            },
+            "call": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "function": {
+                      "type": "string"
+                    },
+                    "args": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/InvokeScriptCallArgument%3CLONG%3E"
+                      }
+                    }
+                  },
+                  "required": [
+                    "args",
+                    "function"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "feeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "payment": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "assetId": {
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                      },
+                      "amount": {
+                        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "assetId"
+                    ]
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "call",
+            "dApp",
+            "feeAssetId",
+            "payment"
           ]
         },
-        "value": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallStringArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBinaryArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallBoolArgument"
-              },
-              {
-                "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/IInvokeScriptCallIntegerArgument<LONG>"
-              }
-            ]
-          }
-        }
-      },
-      "required": [
-        "type",
-        "value"
-      ]
-    },
-    "IInvokeScriptPayment<TChainId>": {
-      "type": "object",
-      "properties": {
-        "assetId": {
-          "type": [
-            "null",
-            "string"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 16
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IInvokeScriptTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
           ]
         },
-        "amount": {
-          "type": [
-            "string",
-            "number"
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 2
+            }
+          },
+          "required": [
+            "version"
           ]
         }
-      },
-      "required": [
-        "amount",
-        "assetId"
       ]
     }
   },

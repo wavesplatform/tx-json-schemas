@@ -1,83 +1,267 @@
 {
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "number",
-      "enum": [
-        3
-      ]
+  "anyOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/IssueTransactionV1%3CLONG%3E"
     },
-    "name": {
-      "minLength": 4,
-      "maxLength": 16,
-      "type": "string"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/IssueTransactionV2%3CLONG%3E"
     },
-    "description": {
-      "maxLength": 1000,
-      "type": "string"
-    },
-    "decimals": {
-      "type": "number"
-    },
-    "quantity": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/LONG"
-    },
-    "reissuable": {
-      "type": "boolean"
-    },
-    "script": {
-      "type": "string"
-    },
-    "timestamp": {
-      "type": "number"
-    },
-    "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/LONG"
-    },
-    "version": {
-      "type": "number"
-    },
-    "chainId": {
-      "type": "number"
-    },
-    "feeAssetId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "proofs": {
-      "description": "ITransaction signatures",
-      "minItems": 0,
-      "maxItems": 8,
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "senderPublicKey": {
-      "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
-      "type": "string"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/IssueTransactionV3%3CLONG%3E"
     }
-  },
-  "required": [
-    "chainId",
-    "decimals",
-    "description",
-    "fee",
-    "name",
-    "proofs",
-    "quantity",
-    "reissuable",
-    "senderPublicKey",
-    "timestamp",
-    "type",
-    "version"
   ],
   "definitions": {
+    "IssueTransactionV1<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "decimals": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/AssetDecimals"
+            },
+            "quantity": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/LONG"
+            },
+            "reissuable": {
+              "type": "boolean"
+            },
+            "script": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "decimals",
+            "description",
+            "name",
+            "quantity",
+            "reissuable",
+            "script"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 3
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 1
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    "AssetDecimals": {
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "type": "number"
+    },
     "LONG": {
       "type": [
         "number"
+      ]
+    },
+    "IssueTransactionV2<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "decimals": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/AssetDecimals"
+            },
+            "quantity": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/LONG"
+            },
+            "reissuable": {
+              "type": "boolean"
+            },
+            "script": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "decimals",
+            "description",
+            "name",
+            "quantity",
+            "reissuable",
+            "script"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 3
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 2
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    "IssueTransactionV3<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "decimals": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/AssetDecimals"
+            },
+            "quantity": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/LONG"
+            },
+            "reissuable": {
+              "type": "boolean"
+            },
+            "script": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "decimals",
+            "description",
+            "name",
+            "quantity",
+            "reissuable",
+            "script"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 3
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IIssueTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 3
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
       ]
     }
   },

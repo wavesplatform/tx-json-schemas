@@ -14,6 +14,7 @@ import IDataTransaction from './IDataTransaction.json'
 import ISponsorshipTransaction from './ISponsorshipTransaction.json'
 import IInvokeScriptTransaction from './IInvokeScriptTransaction.json'
 import IUpdateAssetInfoTransaction from './IUpdateAssetInfoTransaction.json'
+import ICommitToGenerationTransaction from './ICommitToGenerationTransaction.json'
 import IOrder from './IOrder.json'
 import IOrderParams from './IOrderParams.json'
 import ICancelOrder from './ICancelOrder.json'
@@ -31,6 +32,7 @@ import ISetAssetScriptParams from './ISetAssetScriptParams.json'
 import IDataParams from './IDataParams.json'
 import ISponsorshipParams from './ISponsorshipParams.json'
 import IInvokeScriptParams from './IInvokeScriptParams.json'
+import ICommitToGenerationParams from './ICommitToGenerationParams.json'
 import IInvokeScriptPayment from './IInvokeScriptPayment.json'
 import IUpdateAssetInfoParams from './IUpdateAssetInfoParams.json'
 import IInvokeScriptCall from './IInvokeScriptCall.json'
@@ -55,6 +57,7 @@ export default {
   ISponsorshipTransaction,
   IInvokeScriptTransaction,
   IUpdateAssetInfoTransaction,
+  ICommitToGenerationTransaction,
   IOrder,
   IOrderParams,
   ICancelOrder,
@@ -72,6 +75,7 @@ export default {
   IDataParams,
   ISponsorshipParams,
   IInvokeScriptParams,
+  ICommitToGenerationParams,
   IInvokeScriptPayment,
   IUpdateAssetInfoParams,
   IInvokeScriptCall,

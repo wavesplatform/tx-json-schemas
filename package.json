@@ -1,11 +1,12 @@
 {
   "name": "@waves/tx-json-schemas",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "node ./scripts/schemas.js && tsc && node ./scripts/copy-package.js",
     "deploy": "npm run build && cd dist && npm publish",
+    "lint": "eslint \"src/**/*.ts\" \"scripts/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,15 +19,20 @@
     "url": "https://github.com/wavesplatform/tx-json-schemas/issues"
   },
   "homepage": "https://github.com/wavesplatform/tx-json-schemas#readme",
+  "types": "dist/index.d.ts",
   "dependencies": {
-    "@waves/waves-transactions": "4.1.6",
-    "ajv": "^6.10.0"
+    "@waves/node-api-js": "file:../node-api-js",
+    "@waves/ts-types": "file:../ts-types",
+    "@waves/waves-transactions": "file:../waves-transactions",
+    "ajv": "^8.18.0"
   },
   "devDependencies": {
-    "@types/node": "^12.0.2",
-    "fs-extra": "^8.0.1",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5",
-    "typescript-json-schema": "^0.38.0"
+    "@types/node": "^25.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "^9.39.4",
+    "fs-extra": "^11.3.4",
+    "typescript": "^5.9.3",
+    "typescript-json-schema": "^0.67.1"
   }
 }

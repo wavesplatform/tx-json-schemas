@@ -1,6 +1,7 @@
 const {resolve} = require('path');
 const {writeFile} = require('fs-extra');
 const TJS = require('typescript-json-schema');
+const schemaRef = process.env.TX_JSON_SCHEMAS_REF || 'master';
 
 const TYPES = [
     'TTx',
@@ -19,6 +20,7 @@ const TYPES = [
     'ISponsorshipTransaction',
     'IInvokeScriptTransaction',
     'IUpdateAssetInfoTransaction',
+    'ICommitToGenerationTransaction',
     'IOrder',
     'IOrderParams',
     'ICancelOrder',
@@ -36,6 +38,7 @@ const TYPES = [
     'IDataParams',
     'ISponsorshipParams',
     'IInvokeScriptParams',
+    'ICommitToGenerationParams',
     'IInvokeScriptPayment',
     'IUpdateAssetInfoParams',
     'IInvokeScriptCall',
@@ -49,7 +52,7 @@ function buildSchemas() {
     // optionally pass argument to schema generator
     const settings = {
         required: true,
-        include: ['transactions.ts'],
+        include: [resolve('./transactions.ts')],
         excludePrivate: true,
         noExtraProps: false,
     };
@@ -57,16 +60,23 @@ function buildSchemas() {
     // optionally pass ts compiler options
     const compilerOptions = {
         strictNullChecks: true,
+        skipLibCheck: true,
         resolveJsonModule: true,
         allowSyntheticDefaultImports: true,
         downlevelIteration: true,
         lib: ["dom", "es2016", "es2017"]
     };
 
-    const program = TJS.getProgramFromFiles([resolve('./node_modules/@waves/waves-transactions/dist/index.d.ts')], compilerOptions);
+    const program = TJS.getProgramFromFiles(
+        [
+            resolve('./node_modules/@waves/waves-transactions/dist/index.d.ts'),
+            resolve('./transactions.ts'),
+        ],
+        compilerOptions
+    );
 
     TYPES.forEach(type => {
-        const id = `https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/${type}.json`;
+        const id = `https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/${schemaRef}/src/schemas/${type}.json`;
         let schema = TJS.generateSchema(program, type, {...settings, id});
         // Define generic LONG as number in JSON schema.
         // Otherwise ot would be object. Should probably pass param that defines LONG schema;

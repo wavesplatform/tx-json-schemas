@@ -3,20 +3,20 @@
     {
       "type": "object",
       "properties": {
-        "assetId": {
+        "generationPeriodStart": {
+          "type": "number"
+        },
+        "endorserPublicKey": {
           "type": "string"
         },
-        "name": {
-          "type": "string"
-        },
-        "description": {
+        "commitmentSignature": {
           "type": "string"
         }
       },
       "required": [
-        "assetId",
-        "description",
-        "name"
+        "commitmentSignature",
+        "endorserPublicKey",
+        "generationPeriodStart"
       ]
     },
     {
@@ -24,7 +24,7 @@
       "properties": {
         "type": {
           "type": "number",
-          "const": 17
+          "const": 19
         },
         "chainId": {
           "type": "number"
@@ -36,7 +36,7 @@
           "type": "number"
         },
         "fee": {
-          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IUpdateAssetInfoTransaction.json#/definitions/LONG"
+          "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICommitToGenerationTransaction.json#/definitions/LONG"
         }
       },
       "required": [
@@ -68,5 +68,5 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IUpdateAssetInfoTransaction.json"
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICommitToGenerationTransaction.json"
 }

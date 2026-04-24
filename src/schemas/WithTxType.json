@@ -2,7 +2,16 @@
   "type": "object",
   "properties": {
     "type": {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/WithTxType.json#/definitions/TransactionType"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "definitions": {
+    "TransactionType": {
       "enum": [
+        1,
         10,
         11,
         12,
@@ -11,6 +20,9 @@
         15,
         16,
         17,
+        18,
+        19,
+        2,
         3,
         4,
         5,
@@ -20,18 +32,13 @@
         9
       ],
       "type": "number"
-    }
-  },
-  "required": [
-    "type"
-  ],
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/WithTxType.json",
-  "definitions": {
+    },
     "LONG": {
       "type": [
         "number"
       ]
     }
-  }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/WithTxType.json"
 }
