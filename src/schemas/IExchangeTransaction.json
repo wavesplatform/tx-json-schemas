@@ -1,166 +1,1113 @@
 {
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "number",
-      "enum": [
-        7
-      ]
+  "anyOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionV1%3CLONG%3E"
     },
-    "order1": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/IOrder<TChainId>"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionV2%3CLONG%3E"
     },
-    "order2": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/IOrder<TChainId>"
-    },
-    "price": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
-    },
-    "amount": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
-    },
-    "buyMatcherFee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
-    },
-    "sellMatcherFee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
-    },
-    "timestamp": {
-      "type": "number"
-    },
-    "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
-    },
-    "version": {
-      "type": "number"
-    },
-    "chainId": {
-      "type": "number"
-    },
-    "feeAssetId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "proofs": {
-      "description": "ITransaction signatures",
-      "minItems": 0,
-      "maxItems": 8,
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "senderPublicKey": {
-      "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
-      "type": "string"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionV3%3CLONG%3E"
     }
-  },
-  "required": [
-    "amount",
-    "buyMatcherFee",
-    "chainId",
-    "fee",
-    "order1",
-    "order2",
-    "price",
-    "proofs",
-    "sellMatcherFee",
-    "senderPublicKey",
-    "timestamp",
-    "type",
-    "version"
   ],
   "definitions": {
-    "IOrder<TChainId>": {
-      "type": "object",
-      "properties": {
-        "version": {
-          "type": "number"
-        },
-        "orderType": {
-          "enum": [
-            "buy",
-            "sell"
-          ],
-          "type": "string"
-        },
-        "assetPair": {
+    "ExchangeTransactionV1<LONG>": {
+      "allOf": [
+        {
           "type": "object",
           "properties": {
-            "amountAsset": {
-              "type": [
-                "null",
-                "string"
-              ]
+            "order1": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/SignedIExchangeTransactionOrder%3CExchangeTransactionOrder%3CLONG%3E%3E"
             },
-            "priceAsset": {
-              "type": [
-                "null",
-                "string"
-              ]
+            "order2": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/SignedIExchangeTransactionOrder%3CExchangeTransactionOrder%3CLONG%3E%3E"
+            },
+            "price": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "amount": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "buyMatcherFee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "sellMatcherFee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
             }
           },
           "required": [
-            "amountAsset",
-            "priceAsset"
+            "amount",
+            "buyMatcherFee",
+            "order1",
+            "order2",
+            "price",
+            "sellMatcherFee"
           ]
         },
-        "price": {
-          "type": [
-            "string",
-            "number"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 7
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
           ]
         },
-        "amount": {
-          "type": [
-            "string",
-            "number"
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 1
+            }
+          },
+          "required": [
+            "version"
           ]
-        },
-        "timestamp": {
-          "type": "number"
-        },
-        "expiration": {
-          "type": "number"
-        },
-        "matcherFee": {
-          "type": "number"
-        },
-        "matcherPublicKey": {
-          "type": "string"
-        },
-        "proofs": {
-          "description": "ITransaction signatures",
-          "minItems": 0,
-          "maxItems": 8,
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "senderPublicKey": {
-          "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
-          "type": "string"
         }
-      },
-      "required": [
-        "amount",
-        "assetPair",
-        "expiration",
-        "matcherFee",
-        "matcherPublicKey",
-        "orderType",
-        "price",
-        "proofs",
-        "senderPublicKey",
-        "timestamp"
       ]
+    },
+    "SignedIExchangeTransactionOrder<ExchangeTransactionOrder<LONG>>": {
+      "anyOf": [
+        {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number"
+                },
+                "orderType": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionOrderType"
+                },
+                "assetPair": {
+                  "type": "object",
+                  "properties": {
+                    "amountAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "priceAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amountAsset",
+                    "priceAsset"
+                  ]
+                },
+                "price": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "amount": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "timestamp": {
+                  "type": "number"
+                },
+                "expiration": {
+                  "type": "number"
+                },
+                "matcherFee": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "matcherPublicKey": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "assetPair",
+                "expiration",
+                "matcherFee",
+                "matcherPublicKey",
+                "orderType",
+                "price",
+                "senderPublicKey",
+                "timestamp",
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number",
+                  "const": 1
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "signature": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "signature"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number"
+                },
+                "orderType": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionOrderType"
+                },
+                "assetPair": {
+                  "type": "object",
+                  "properties": {
+                    "amountAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "priceAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amountAsset",
+                    "priceAsset"
+                  ]
+                },
+                "price": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "amount": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "timestamp": {
+                  "type": "number"
+                },
+                "expiration": {
+                  "type": "number"
+                },
+                "matcherFee": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "matcherPublicKey": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "assetPair",
+                "expiration",
+                "matcherFee",
+                "matcherPublicKey",
+                "orderType",
+                "price",
+                "senderPublicKey",
+                "timestamp",
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number",
+                  "const": 1
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "proofs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "proofs"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number"
+                },
+                "orderType": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionOrderType"
+                },
+                "assetPair": {
+                  "type": "object",
+                  "properties": {
+                    "amountAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "priceAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amountAsset",
+                    "priceAsset"
+                  ]
+                },
+                "price": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "amount": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "timestamp": {
+                  "type": "number"
+                },
+                "expiration": {
+                  "type": "number"
+                },
+                "matcherFee": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "matcherPublicKey": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "assetPair",
+                "expiration",
+                "matcherFee",
+                "matcherPublicKey",
+                "orderType",
+                "price",
+                "senderPublicKey",
+                "timestamp",
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number",
+                  "const": 2
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "signature": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "signature"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number"
+                },
+                "orderType": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionOrderType"
+                },
+                "assetPair": {
+                  "type": "object",
+                  "properties": {
+                    "amountAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "priceAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amountAsset",
+                    "priceAsset"
+                  ]
+                },
+                "price": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "amount": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "timestamp": {
+                  "type": "number"
+                },
+                "expiration": {
+                  "type": "number"
+                },
+                "matcherFee": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "matcherPublicKey": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "assetPair",
+                "expiration",
+                "matcherFee",
+                "matcherPublicKey",
+                "orderType",
+                "price",
+                "senderPublicKey",
+                "timestamp",
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number",
+                  "const": 2
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "proofs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "proofs"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number"
+                },
+                "orderType": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionOrderType"
+                },
+                "assetPair": {
+                  "type": "object",
+                  "properties": {
+                    "amountAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "priceAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amountAsset",
+                    "priceAsset"
+                  ]
+                },
+                "price": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "amount": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "timestamp": {
+                  "type": "number"
+                },
+                "expiration": {
+                  "type": "number"
+                },
+                "matcherFee": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "matcherPublicKey": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "assetPair",
+                "expiration",
+                "matcherFee",
+                "matcherPublicKey",
+                "orderType",
+                "price",
+                "senderPublicKey",
+                "timestamp",
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "matcherFeeAssetId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "matcherFeeAssetId"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number",
+                  "const": 3
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "signature": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "signature"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number"
+                },
+                "orderType": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionOrderType"
+                },
+                "assetPair": {
+                  "type": "object",
+                  "properties": {
+                    "amountAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "priceAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amountAsset",
+                    "priceAsset"
+                  ]
+                },
+                "price": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "amount": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "timestamp": {
+                  "type": "number"
+                },
+                "expiration": {
+                  "type": "number"
+                },
+                "matcherFee": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "matcherPublicKey": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "assetPair",
+                "expiration",
+                "matcherFee",
+                "matcherPublicKey",
+                "orderType",
+                "price",
+                "senderPublicKey",
+                "timestamp",
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "matcherFeeAssetId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "matcherFeeAssetId"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number",
+                  "const": 3
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "proofs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "proofs"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number"
+                },
+                "orderType": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionOrderType"
+                },
+                "assetPair": {
+                  "type": "object",
+                  "properties": {
+                    "amountAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "priceAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amountAsset",
+                    "priceAsset"
+                  ]
+                },
+                "price": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "amount": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "timestamp": {
+                  "type": "number"
+                },
+                "expiration": {
+                  "type": "number"
+                },
+                "matcherFee": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "matcherPublicKey": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "assetPair",
+                "expiration",
+                "matcherFee",
+                "matcherPublicKey",
+                "orderType",
+                "price",
+                "senderPublicKey",
+                "timestamp",
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "matcherFeeAssetId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "matcherFeeAssetId"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "priceMode": {
+                  "enum": [
+                    "assetDecimals",
+                    "fixedDecimals"
+                  ],
+                  "type": "string"
+                },
+                "eip712Signature": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                },
+                "attachment": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "priceMode"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number",
+                  "const": 4
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "signature": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "signature"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number"
+                },
+                "orderType": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/ExchangeTransactionOrderType"
+                },
+                "assetPair": {
+                  "type": "object",
+                  "properties": {
+                    "amountAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "priceAsset": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "amountAsset",
+                    "priceAsset"
+                  ]
+                },
+                "price": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "amount": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "timestamp": {
+                  "type": "number"
+                },
+                "expiration": {
+                  "type": "number"
+                },
+                "matcherFee": {
+                  "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+                },
+                "matcherPublicKey": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "amount",
+                "assetPair",
+                "expiration",
+                "matcherFee",
+                "matcherPublicKey",
+                "orderType",
+                "price",
+                "senderPublicKey",
+                "timestamp",
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "matcherFeeAssetId": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "matcherFeeAssetId"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "priceMode": {
+                  "enum": [
+                    "assetDecimals",
+                    "fixedDecimals"
+                  ],
+                  "type": "string"
+                },
+                "eip712Signature": {
+                  "type": "string"
+                },
+                "senderPublicKey": {
+                  "type": "string"
+                },
+                "attachment": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "priceMode"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "version": {
+                  "type": "number",
+                  "const": 4
+                }
+              },
+              "required": [
+                "version"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "proofs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "proofs"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "ExchangeTransactionOrderType": {
+      "enum": [
+        "buy",
+        "sell"
+      ],
+      "type": "string"
     },
     "LONG": {
       "type": [
         "number"
+      ]
+    },
+    "ExchangeTransactionV2<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "order1": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/SignedIExchangeTransactionOrder%3CExchangeTransactionOrder%3CLONG%3E%3E"
+            },
+            "order2": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/SignedIExchangeTransactionOrder%3CExchangeTransactionOrder%3CLONG%3E%3E"
+            },
+            "price": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "amount": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "buyMatcherFee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "sellMatcherFee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "amount",
+            "buyMatcherFee",
+            "order1",
+            "order2",
+            "price",
+            "sellMatcherFee"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 7
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 2
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    "ExchangeTransactionV3<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "order1": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/SignedIExchangeTransactionOrder%3CExchangeTransactionOrder%3CLONG%3E%3E"
+            },
+            "order2": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/SignedIExchangeTransactionOrder%3CExchangeTransactionOrder%3CLONG%3E%3E"
+            },
+            "price": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "amount": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "buyMatcherFee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            },
+            "sellMatcherFee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "amount",
+            "buyMatcherFee",
+            "order1",
+            "order2",
+            "price",
+            "sellMatcherFee"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 7
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IExchangeTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 3
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
       ]
     }
   },

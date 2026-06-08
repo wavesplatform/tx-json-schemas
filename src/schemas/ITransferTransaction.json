@@ -1,79 +1,259 @@
 {
-  "description": "Used to transfer assets from one account to another.",
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "number",
-      "enum": [
-        4
-      ]
+  "anyOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/TransferTransactionV1%3CLONG%3E"
     },
-    "recipient": {
-      "type": "string"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/TransferTransactionV2%3CLONG%3E"
     },
-    "amount": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
-    },
-    "attachment": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "feeAssetId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "assetId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "timestamp": {
-      "type": "number"
-    },
-    "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
-    },
-    "version": {
-      "type": "number"
-    },
-    "chainId": {
-      "type": "number"
-    },
-    "proofs": {
-      "description": "ITransaction signatures",
-      "minItems": 0,
-      "maxItems": 8,
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "senderPublicKey": {
-      "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
-      "type": "string"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/TransferTransactionV3%3CLONG%3E"
     }
-  },
-  "required": [
-    "amount",
-    "attachment",
-    "chainId",
-    "fee",
-    "proofs",
-    "recipient",
-    "senderPublicKey",
-    "timestamp",
-    "type",
-    "version"
   ],
   "definitions": {
+    "TransferTransactionV1<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "recipient": {
+              "type": "string"
+            },
+            "amount": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
+            },
+            "feeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "assetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "attachment": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "amount",
+            "assetId",
+            "attachment",
+            "feeAssetId",
+            "recipient"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 4
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 1
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
     "LONG": {
       "type": [
         "number"
+      ]
+    },
+    "TransferTransactionV2<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "recipient": {
+              "type": "string"
+            },
+            "amount": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
+            },
+            "feeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "assetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "attachment": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "amount",
+            "assetId",
+            "attachment",
+            "feeAssetId",
+            "recipient"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 4
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 2
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    "TransferTransactionV3<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "recipient": {
+              "type": "string"
+            },
+            "amount": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
+            },
+            "feeAssetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "assetId": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "attachment": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          },
+          "required": [
+            "amount",
+            "assetId",
+            "attachment",
+            "feeAssetId",
+            "recipient"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 4
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ITransferTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 3
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
       ]
     }
   },

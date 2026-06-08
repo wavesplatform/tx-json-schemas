@@ -1,61 +1,184 @@
 {
-  "type": "object",
-  "properties": {
-    "type": {
-      "type": "number",
-      "enum": [
-        9
-      ]
+  "anyOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICancelLeaseTransaction.json#/definitions/CancelLeaseTransactionV1%3CLONG%3E"
     },
-    "leaseId": {
-      "type": "string"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICancelLeaseTransaction.json#/definitions/CancelLeaseTransactionV2%3CLONG%3E"
     },
-    "timestamp": {
-      "type": "number"
-    },
-    "fee": {
-      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICancelLeaseTransaction.json#/definitions/LONG"
-    },
-    "version": {
-      "type": "number"
-    },
-    "chainId": {
-      "type": "number"
-    },
-    "feeAssetId": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "proofs": {
-      "description": "ITransaction signatures",
-      "minItems": 0,
-      "maxItems": 8,
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "senderPublicKey": {
-      "description": "Account public key. This account will pay fee and this account's script will be executed if exists",
-      "type": "string"
+    {
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICancelLeaseTransaction.json#/definitions/CancelLeaseTransactionV3%3CLONG%3E"
     }
-  },
-  "required": [
-    "chainId",
-    "fee",
-    "leaseId",
-    "proofs",
-    "senderPublicKey",
-    "timestamp",
-    "type",
-    "version"
   ],
   "definitions": {
+    "CancelLeaseTransactionV1<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "leaseId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "leaseId"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 9
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICancelLeaseTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 1
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
     "LONG": {
       "type": [
         "number"
+      ]
+    },
+    "CancelLeaseTransactionV2<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "leaseId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "leaseId"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 9
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICancelLeaseTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 2
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      ]
+    },
+    "CancelLeaseTransactionV3<LONG>": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "leaseId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "leaseId"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number",
+              "const": 9
+            },
+            "chainId": {
+              "type": "number"
+            },
+            "senderPublicKey": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "fee": {
+              "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/ICancelLeaseTransaction.json#/definitions/LONG"
+            }
+          },
+          "required": [
+            "chainId",
+            "fee",
+            "senderPublicKey",
+            "timestamp",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "number",
+              "const": 3
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
       ]
     }
   },

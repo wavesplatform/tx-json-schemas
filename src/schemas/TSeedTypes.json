@@ -23,38 +23,41 @@
     {
       "type": "array",
       "items": {
-        "anyOf": [
-          {
-            "type": "object",
-            "properties": {
-              "privateKey": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "privateKey"
-            ]
-          },
-          {
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        ]
+        "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TSeedTypes.json#/definitions/TOption%3Cstring%7CTPrivateKey%3E"
       }
     },
     {
       "type": "string"
     }
   ],
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TSeedTypes.json",
   "definitions": {
+    "TOption<string|TPrivateKey>": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "privateKey": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "privateKey"
+          ]
+        },
+        {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      ]
+    },
     "LONG": {
       "type": [
         "number"
       ]
     }
-  }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/TSeedTypes.json"
 }

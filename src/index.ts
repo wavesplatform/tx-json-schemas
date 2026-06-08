@@ -1,15 +1,16 @@
-import Ajv = require('ajv')
+import Ajv, { type ValidateFunction } from 'ajv'
 import { mapObj } from "@waves/waves-transactions/dist/generic";
-import { TRANSACTION_TYPE } from '@waves/waves-transactions/dist/transactions';
+import { TRANSACTION_TYPE } from '@waves/ts-types/src';
 import schemas from './schemas';
 
-const ajv = Ajv({
+const ajv = new Ajv({
     allErrors: true,
+    allowUnionTypes: true,
 });
 
 export const validators = mapObj(schemas, (schema: any) => ajv.compile(schema));
 
-export const schemaTypeMap: { [i: number]: { schema: any, paramsSchema: any, validator: Ajv.ValidateFunction, paramsValidator: Ajv.ValidateFunction } } = {
+export const schemaTypeMap: { [i: number]: { schema: any, paramsSchema: any, validator: ValidateFunction, paramsValidator: ValidateFunction } } = {
     [TRANSACTION_TYPE.ISSUE]: {
         schema: schemas.IIssueTransaction,
         paramsSchema: schemas.IIssueParams,
@@ -100,6 +101,12 @@ export const schemaTypeMap: { [i: number]: { schema: any, paramsSchema: any, val
         paramsSchema: schemas.IUpdateAssetInfoParams,
         validator: validators.IUpdateAssetInfoTransaction,
         paramsValidator: validators.IUpdateAssetInfoParams,
+    },
+    [TRANSACTION_TYPE.COMMIT_TO_GENERATION]: {
+        schema: schemas.ICommitToGenerationTransaction,
+        paramsSchema: schemas.ICommitToGenerationParams,
+        validator: validators.ICommitToGenerationTransaction,
+        paramsValidator: validators.ICommitToGenerationParams,
     }
 };
 

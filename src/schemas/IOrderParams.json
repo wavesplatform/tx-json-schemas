@@ -11,11 +11,7 @@
       "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IOrderParams.json#/definitions/LONG"
     },
     "orderType": {
-      "enum": [
-        "buy",
-        "sell"
-      ],
-      "type": "string"
+      "$ref": "https://raw.githubusercontent.com/wavesplatform/tx-json-schemas/master/src/schemas/IOrderParams.json#/definitions/ExchangeTransactionOrderType"
     },
     "amountAsset": {
       "type": [
@@ -46,6 +42,13 @@
         "null",
         "string"
       ]
+    },
+    "priceMode": {
+      "enum": [
+        "assetDecimals",
+        "fixedDecimals"
+      ],
+      "type": "string"
     }
   },
   "required": [
@@ -61,6 +64,13 @@
       "type": [
         "number"
       ]
+    },
+    "ExchangeTransactionOrderType": {
+      "enum": [
+        "buy",
+        "sell"
+      ],
+      "type": "string"
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
