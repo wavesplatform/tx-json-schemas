@@ -42,7 +42,6 @@ const TYPES = [
     'IInvokeScriptPayment',
     'IUpdateAssetInfoParams',
     'IInvokeScriptCall',
-    'INodeRequestOptions',
     'TSeedTypes',
     'WithId',
     'WithTxType'

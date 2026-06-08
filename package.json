@@ -21,7 +21,6 @@
   "homepage": "https://github.com/wavesplatform/tx-json-schemas#readme",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@waves/node-api-js": "1.4.0-snapshot.3",
     "@waves/ts-types": "^1.3.1",
     "@waves/waves-transactions": "5.0.0",
     "ajv": "^8.20.0"

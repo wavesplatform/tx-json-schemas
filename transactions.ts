@@ -19,7 +19,6 @@ import type {
     TransferTransaction,
     UpdateAssetInfoTransaction,
 } from '@waves/ts-types/src';
-import type { INodeRequestOptions as NodeApiRequestOptions } from '@waves/node-api-js/cjs/nodeInteraction';
 
 // Backward-compatible aliases for schema generation.
 export type IAliasTransaction<LONG = string | number> = AliasTransaction<LONG>;
@@ -41,4 +40,3 @@ export type IOrder<LONG = string | number> = ExchangeTransactionOrder<LONG>;
 export type IInvokeScriptPayment<LONG = string | number> = InvokeScriptPayment<LONG>;
 export type IInvokeScriptCall<LONG = string | number> = InvokeScriptCall<LONG>;
 export type ICommitToGenerationTransaction<LONG = string | number> = CommitToGenerationTransaction<LONG>;
-export type INodeRequestOptions = NodeApiRequestOptions;

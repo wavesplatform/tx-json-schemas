@@ -36,7 +36,6 @@ import ICommitToGenerationParams from './ICommitToGenerationParams.json'
 import IInvokeScriptPayment from './IInvokeScriptPayment.json'
 import IUpdateAssetInfoParams from './IUpdateAssetInfoParams.json'
 import IInvokeScriptCall from './IInvokeScriptCall.json'
-import INodeRequestOptions from './INodeRequestOptions.json'
 import TSeedTypes from './TSeedTypes.json'
 import WithId from './WithId.json'
 import WithTxType from './WithTxType.json'
@@ -79,7 +78,6 @@ export default {
   IInvokeScriptPayment,
   IUpdateAssetInfoParams,
   IInvokeScriptCall,
-  INodeRequestOptions,
   TSeedTypes,
   WithId,
   WithTxType
