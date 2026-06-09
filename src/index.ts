@@ -1,6 +1,6 @@
 import Ajv, { type ValidateFunction } from 'ajv'
 import { mapObj } from "@waves/waves-transactions/dist/generic";
-import { TRANSACTION_TYPE } from '@waves/ts-types/src';
+import { TRANSACTION_TYPE } from '@waves/ts-types';
 import schemas from './schemas';
 
 const ajv = new Ajv({

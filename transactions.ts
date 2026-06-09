@@ -18,7 +18,7 @@ import type {
     SponsorshipTransaction,
     TransferTransaction,
     UpdateAssetInfoTransaction,
-} from '@waves/ts-types/src';
+} from '@waves/ts-types';
 
 // Backward-compatible aliases for schema generation.
 export type IAliasTransaction<LONG = string | number> = AliasTransaction<LONG>;
