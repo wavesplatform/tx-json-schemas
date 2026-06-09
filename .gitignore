@@ -117,6 +117,11 @@ typings/
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 dist
+# Build output emitted to the package root (published via the "files" allowlist)
+/index.js
+/index.js.map
+/index.d.ts
+/schemas/
 build/tmp
 .idea
 sandbox.spec.ts
